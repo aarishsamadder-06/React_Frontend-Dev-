@@ -1,1 +1,25 @@
-[]
+[
+  {
+    "challengeId": "01-static-task-display",
+    "challengeName": "Static Task Display",
+    "aiReview": {
+      "challengeId": "01-static-task-display",
+      "timestamp": "2026-06-12T03:53:26.632Z",
+      "score": 83,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript interfaces and type annotations is excellent and improves code readability.",
+        "The code is well-organized into separate components, making it easier to maintain and extend."
+      ],
+      "improvements": [
+        "Some of the function names could be more descriptive. For example, `handleDelete` could be renamed to `onDeleteTask`.",
+        "The `TaskCard` component has a lot of props, which can make it harder to understand and maintain. Consider breaking it down into smaller, more focused components.",
+        "The `TaskList` component uses a hardcoded array of tasks. Consider fetching tasks from a data source or using a more dynamic approach to render tasks."
+      ],
+      "readability": 85,
+      "maintainability": 80,
+      "overall": "The code is well-structured and follows best practices, but there are some areas for improvement to make it more maintainable and efficient."
+    }
+  }
+]
