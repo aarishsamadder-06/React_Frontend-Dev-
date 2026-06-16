@@ -5,15 +5,15 @@ interface TaskCardProps {
   description: string;
   priority?: string;
   completed?: boolean;
+  category?: string;
+  tags?: string[];
   onToggle?: (id: string | number) => void;
   onDelete?: (id: string | number) => void;
   taskId?: string | number;
   id?: string | number;
 
   editingId?: string | number | null;
-  setEditingId?: (
-    id: string | number | null
-  ) => void;
+  setEditingId?: (id: string | number | null) => void;
 
   onUpdateTask?: (
     id: string | number,
@@ -21,6 +21,8 @@ interface TaskCardProps {
       title: string;
       description: string;
       priority: string;
+      category: string;
+      tags: string[];
     }
   ) => void;
 }
@@ -30,6 +32,8 @@ export default function TaskCard({
   description,
   priority = "Low",
   completed,
+  category = "General",
+  tags = [],
   onToggle,
   onDelete,
   taskId,
@@ -39,37 +43,38 @@ export default function TaskCard({
   onUpdateTask,
 }: TaskCardProps) {
   const resolvedId = taskId ?? id ?? 0;
-
   const isEditing = editingId === resolvedId;
 
   const [editTitle, setEditTitle] = useState(title);
-  const [editDescription, setEditDescription] =
-    useState(description);
-  const [editPriority, setEditPriority] =
-    useState(priority);
+  const [editDescription, setEditDescription] = useState(description);
+  const [editPriority, setEditPriority] = useState(priority);
+  const [editCategory, setEditCategory] = useState(category);
+  const [editTagsInput, setEditTagsInput] = useState(tags.join(", "));
 
   useEffect(() => {
     if (isEditing) {
       setEditTitle(title);
       setEditDescription(description);
       setEditPriority(priority);
+      setEditCategory(category);
+      setEditTagsInput(tags.join(", "));
     }
-  }, [
-    isEditing,
-    title,
-    description,
-    priority,
-  ]);
+  }, [isEditing, title, description, priority, category, tags]);
 
   const handleSave = () => {
-    if (!editTitle.trim()) {
-      return;
-    }
+    if (!editTitle.trim()) return;
+
+    const parsedTags = editTagsInput
+      .split(",")
+      .map((t) => t.trim())
+      .filter((t) => t.length > 0);
 
     onUpdateTask?.(resolvedId, {
       title: editTitle,
       description: editDescription,
       priority: editPriority,
+      category: editCategory,
+      tags: parsedTags,
     });
 
     setEditingId?.(null);
@@ -79,19 +84,17 @@ export default function TaskCard({
     setEditTitle(title);
     setEditDescription(description);
     setEditPriority(priority);
+    setEditCategory(category);
+    setEditTagsInput(tags.join(", "));
     setEditingId?.(null);
   };
 
   return (
     <article
       id="task-card"
-      data-completed={
-        completed ? "true" : undefined
-      }
+      data-completed={completed ? "true" : undefined}
       style={{
-        background: completed
-          ? "#e6ffe6"
-          : undefined,
+        background: completed ? "#e6ffe6" : undefined,
         padding: "10px",
         marginBottom: "10px",
       }}
@@ -100,9 +103,7 @@ export default function TaskCard({
         <input
           type="checkbox"
           checked={!!completed}
-          onChange={() =>
-            onToggle(resolvedId)
-          }
+          onChange={() => onToggle(resolvedId)}
         />
       )}
 
@@ -110,95 +111,89 @@ export default function TaskCard({
         <>
           <input
             value={editTitle}
-            onChange={(e) =>
-              setEditTitle(
-                e.target.value
-              )
-            }
+            onChange={(e) => setEditTitle(e.target.value)}
           />
 
           <textarea
             value={editDescription}
-            onChange={(e) =>
-              setEditDescription(
-                e.target.value
-              )
-            }
+            onChange={(e) => setEditDescription(e.target.value)}
           />
 
           <select
             value={editPriority}
-            onChange={(e) =>
-              setEditPriority(
-                e.target.value
-              )
-            }
+            onChange={(e) => setEditPriority(e.target.value)}
           >
-            <option value="Low">
-              Low
-            </option>
-            <option value="Medium">
-              Medium
-            </option>
-            <option value="High">
-              High
-            </option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
           </select>
 
-          <button
-            type="button"
-            onClick={handleSave}
+          <select
+            value={editCategory}
+            onChange={(e) => setEditCategory(e.target.value)}
           >
+            <option value="General">General</option>
+            <option value="Work">Work</option>
+            <option value="Personal">Personal</option>
+          </select>
+
+          <input
+            placeholder="Tags (comma-separated)"
+            value={editTagsInput}
+            onChange={(e) => setEditTagsInput(e.target.value)}
+          />
+
+          <button type="button" onClick={handleSave}>
             Save
           </button>
 
-          <button
-            type="button"
-            onClick={handleCancel}
-          >
+          <button type="button" onClick={handleCancel}>
             Cancel
           </button>
         </>
       ) : (
         <>
           <h2
-            style={
-              completed
-                ? {
-                    textDecoration:
-                      "line-through",
-                  }
-                : undefined
-            }
+            style={completed ? { textDecoration: "line-through" } : undefined}
           >
             {title}
           </h2>
 
           <p
-            style={
-              completed
-                ? {
-                    textDecoration:
-                      "line-through",
-                  }
-                : undefined
-            }
+            style={completed ? { textDecoration: "line-through" } : undefined}
           >
             {description}
           </p>
 
-          <p>
-            Priority: {priority}
-          </p>
+          <p>Priority: {priority}</p>
+
+          <p id="task-category">Category: {category}</p>
+
+          {tags.length > 0 && (
+            <div id="task-tags">
+              {tags.map((tag) => (
+                <span
+                  key={tag}
+                  data-tag={tag}
+                  style={{
+                    display: "inline-block",
+                    background: "#dbeafe",
+                    borderRadius: "9999px",
+                    padding: "2px 8px",
+                    marginRight: "4px",
+                    fontSize: "0.75rem",
+                  }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
 
           {setEditingId && (
             <button
               type="button"
-              onClick={() =>
-                setEditingId(
-                  resolvedId
-                )
-              }
+              onClick={() => setEditingId(resolvedId)}
             >
               Edit
             </button>
@@ -213,9 +208,7 @@ export default function TaskCard({
                     "Are you sure you want to delete this task?"
                   )
                 ) {
-                  onDelete(
-                    resolvedId
-                  );
+                  onDelete(resolvedId);
                 }
               }}
             >

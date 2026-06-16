@@ -19,38 +19,27 @@ export default function TaskApp({
   onDelete,
   showFilterBar,
 }: TaskAppProps) {
-  const [filter, setFilter] = useState<
-    "all" | "active" | "completed"
-  >("all");
-
-  const [sortOrder, setSortOrder] =
-    useState("recent");
+  const [filter, setFilter] = useState<"all" | "active" | "completed">("all");
+  const [sortOrder, setSortOrder] = useState("recent");
 
   // Raw input value — updates immediately on keystroke
-  const [searchText, setSearchText] =
-    useState("");
-
+  const [searchText, setSearchText] = useState("");
   // Debounced value — drives actual filtering
-  const [debouncedSearch, setDebouncedSearch] =
-    useState("");
+  const [debouncedSearch, setDebouncedSearch] = useState("");
 
-  const [editingId, setEditingId] = useState<
-    string | number | null
-  >(null);
+  // Challenge 12: category filter
+  const [categoryFilter, setCategoryFilter] = useState("all");
 
-  // Debounce effect: wait 300ms after typing stops before updating filter
+  const [editingId, setEditingId] = useState<string | number | null>(null);
+
+  // Debounce: 300ms after typing stops
   useEffect(() => {
     const timer = setTimeout(() => {
       setDebouncedSearch(searchText);
     }, 300);
-
-    // Cleanup: cancel pending timeout when searchText changes or component unmounts
-    return () => {
-      clearTimeout(timer);
-    };
+    return () => clearTimeout(timer);
   }, [searchText]);
 
-  // True while the user has typed but the debounced value hasn't caught up yet
   const isSearching = searchText !== debouncedSearch;
 
   function handleAddTask(task: Task) {
@@ -61,12 +50,9 @@ export default function TaskApp({
 
   function handleToggle(id: string | number) {
     if (!setTasks) return;
-
     setTasks((prev) =>
       prev.map((task) =>
-        task.id === id
-          ? { ...task, completed: !task.completed }
-          : task
+        task.id === id ? { ...task, completed: !task.completed } : task
       )
     );
   }
@@ -77,20 +63,18 @@ export default function TaskApp({
       title: string;
       description: string;
       priority: string;
+      category: string;
+      tags: string[];
     }
   ) {
     if (!setTasks) return;
-
-    if (!updates.title.trim()) {
-      return;
-    }
+    if (!updates.title.trim()) return;
 
     setTasks((prev) =>
       prev.map((task) =>
         task.id === id ? { ...task, ...updates } : task
       )
     );
-
     setEditingId(null);
   }
 
@@ -99,7 +83,14 @@ export default function TaskApp({
     setDebouncedSearch("");
   }
 
-  // Filter by status
+  // Derive unique categories from tasks
+  const categories = [
+    ...new Set(
+      tasks.map((t) => t.category).filter(Boolean)
+    ),
+  ] as string[];
+
+  // 1. Status filter
   const statusFiltered =
     filter === "all"
       ? tasks
@@ -107,8 +98,16 @@ export default function TaskApp({
       ? tasks.filter((t) => !t.completed)
       : tasks.filter((t) => t.completed);
 
-  // Filter by debounced search term (not raw input)
-  const searchedTasks = statusFiltered.filter((task) => {
+  // 2. Category filter
+  const categoryFiltered =
+    categoryFilter === "all"
+      ? statusFiltered
+      : statusFiltered.filter(
+          (t) => t.category === categoryFilter
+        );
+
+  // 3. Search filter (debounced)
+  const searchedTasks = categoryFiltered.filter((task) => {
     const search = debouncedSearch.toLowerCase();
     return (
       task.title.toLowerCase().includes(search) ||
@@ -116,7 +115,7 @@ export default function TaskApp({
     );
   });
 
-  // Sort
+  // 4. Sort
   const priorityValue: Record<string, number> = {
     High: 3,
     Medium: 2,
@@ -139,7 +138,10 @@ export default function TaskApp({
   return (
     <div>
       {showForm && (
-        <TaskForm onAddTask={handleAddTask} />
+        <TaskForm
+          onAddTask={handleAddTask}
+          existingCategories={categories}
+        />
       )}
 
       {showFilterBar && (
@@ -152,6 +154,9 @@ export default function TaskApp({
           onSearchChange={setSearchText}
           onClearSearch={handleClearSearch}
           isSearching={isSearching}
+          categoryFilter={categoryFilter}
+          onCategoryChange={setCategoryFilter}
+          categories={categories}
         />
       )}
 
@@ -160,9 +165,7 @@ export default function TaskApp({
       </div>
 
       {sortedTasks.length === 0 ? (
-        <div id="filter-empty-message">
-          No tasks found
-        </div>
+        <div id="filter-empty-message">No tasks found</div>
       ) : (
         <TaskList
           tasks={sortedTasks}

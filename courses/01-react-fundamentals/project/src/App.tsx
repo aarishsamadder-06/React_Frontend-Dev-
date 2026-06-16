@@ -9,22 +9,77 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import type { Task } from "./components/TaskList";
 
 const INITIAL_TASKS: Task[] = [
-  { id: 1, title: "First Task", description: "Description one", priority: "High", completed: false },
-  { id: 2, title: "Second Task", description: "Description two", priority: "Medium", completed: false },
-  { id: 3, title: "Third Task", description: "Description three", priority: "Low", completed: false },
-  { id: 4, title: "Fourth Task", description: "Description four", priority: "Medium", completed: false },
-  { id: 5, title: "Fifth Task", description: "Description five", priority: "High", completed: false },
+  {
+    id: 1,
+    title: "First Task",
+    description: "Description one",
+    priority: "High",
+    completed: false,
+    category: "General",
+    tags: [],
+  },
+  {
+    id: 2,
+    title: "Second Task",
+    description: "Description two",
+    priority: "Medium",
+    completed: false,
+    category: "Work",
+    tags: [],
+  },
+  {
+    id: 3,
+    title: "Third Task",
+    description: "Description three",
+    priority: "Low",
+    completed: false,
+    category: "Personal",
+    tags: [],
+  },
+  {
+    id: 4,
+    title: "Fourth Task",
+    description: "Description four",
+    priority: "Medium",
+    completed: false,
+    category: "Work",
+    tags: [],
+  },
+  {
+    id: 5,
+    title: "Fifth Task",
+    description: "Description five",
+    priority: "High",
+    completed: false,
+    category: "General",
+    tags: [],
+  },
 ];
 
 const STORAGE_KEY = "task-app-tasks";
+
+function normalizeTask(task: Partial<Task>): Task {
+  return {
+    id: task.id ?? Date.now(),
+    title: task.title ?? "",
+    description: task.description ?? "",
+    priority: task.priority ?? "Low",
+    completed: task.completed ?? false,
+    category: task.category ?? "General",
+    tags: Array.isArray(task.tags) ? task.tags : [],
+  };
+}
 
 function AppContent() {
   const [tasks, setTasks] = useState<Task[]>(() => {
     try {
       const storedTasks = localStorage.getItem(STORAGE_KEY);
       if (storedTasks) {
-        const parsedTasks: Task[] = JSON.parse(storedTasks);
-        if (Array.isArray(parsedTasks)) return parsedTasks;
+        const parsed = JSON.parse(storedTasks);
+        if (Array.isArray(parsed)) {
+          // Normalize: fill in category/tags for old tasks missing them
+          return parsed.map(normalizeTask);
+        }
       }
     } catch {}
     return INITIAL_TASKS;
@@ -75,6 +130,9 @@ function AppContent() {
               element={<TaskApp tasks={tasks} setTasks={setTasks} showForm showFilterBar onDelete={handleDelete} />} />
 
             <Route path="/challenge/11-useeffect-debounced-search"
+              element={<TaskApp tasks={tasks} setTasks={setTasks} showForm showFilterBar onDelete={handleDelete} />} />
+
+            <Route path="/challenge/12-categories-and-tags"
               element={<TaskApp tasks={tasks} setTasks={setTasks} showForm showFilterBar onDelete={handleDelete} />} />
 
             <Route path="/challenge/21-react-router"

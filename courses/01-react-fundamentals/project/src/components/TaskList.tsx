@@ -6,6 +6,8 @@ export interface Task {
   description: string;
   priority: string;
   completed: boolean;
+  category: string;
+  tags: string[];
 }
 
 interface TaskListProps {
@@ -20,13 +22,13 @@ interface TaskListProps {
       title: string;
       description: string;
       priority: string;
+      category: string;
+      tags: string[];
     }
   ) => void;
 
   editingId?: string | number | null;
-  setEditingId?: (
-    id: string | number | null
-  ) => void;
+  setEditingId?: (id: string | number | null) => void;
 }
 
 const defaultTasks: Task[] = [
@@ -36,6 +38,8 @@ const defaultTasks: Task[] = [
     description: "Description One",
     priority: "Low",
     completed: false,
+    category: "General",
+    tags: [],
   },
   {
     id: 2,
@@ -43,6 +47,8 @@ const defaultTasks: Task[] = [
     description: "Description Two",
     priority: "High",
     completed: false,
+    category: "Work",
+    tags: [],
   },
   {
     id: 3,
@@ -50,6 +56,8 @@ const defaultTasks: Task[] = [
     description: "Description Three",
     priority: "Medium",
     completed: false,
+    category: "Personal",
+    tags: [],
   },
 ];
 
@@ -62,13 +70,8 @@ export default function TaskList({
   editingId,
   setEditingId,
 }: TaskListProps) {
-  const completedCount = tasks.filter(
-    (t) => t.completed
-  ).length;
-
-  const resolvedCountText =
-    countText ??
-    `${tasks.length} Tasks`;
+  const completedCount = tasks.filter((t) => t.completed).length;
+  const resolvedCountText = countText ?? `${tasks.length} Tasks`;
 
   return (
     <div>
@@ -90,6 +93,8 @@ export default function TaskList({
             description={task.description}
             priority={task.priority}
             completed={task.completed}
+            category={task.category}
+            tags={task.tags}
             onToggle={onToggle}
             onDelete={onDelete}
             onUpdateTask={onUpdateTask}

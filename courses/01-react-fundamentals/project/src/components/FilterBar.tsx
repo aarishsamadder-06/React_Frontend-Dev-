@@ -13,6 +13,11 @@ interface FilterBarProps {
 
   // Challenge 11
   isSearching?: boolean;
+
+  // Challenge 12
+  categoryFilter?: string;
+  onCategoryChange?: (category: string) => void;
+  categories?: string[];
 }
 
 function FilterBar({
@@ -24,6 +29,9 @@ function FilterBar({
   onSearchChange,
   onClearSearch,
   isSearching = false,
+  categoryFilter = "all",
+  onCategoryChange,
+  categories = [],
 }: FilterBarProps) {
   return (
     <div id="filter-bar">
@@ -57,6 +65,19 @@ function FilterBar({
         <option value="high">Priority: High to Low</option>
         <option value="low">Priority: Low to High</option>
         <option value="alphabetical">Alphabetical</option>
+      </select>
+
+      <select
+        id="category-filter"
+        value={categoryFilter}
+        onChange={(e) => onCategoryChange?.(e.target.value)}
+      >
+        <option value="all">All categories</option>
+        {categories.map((cat) => (
+          <option key={cat} value={cat}>
+            {cat}
+          </option>
+        ))}
       </select>
 
       <input
