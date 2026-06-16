@@ -10,6 +10,9 @@ interface FilterBarProps {
   searchText?: string;
   onSearchChange?: (value: string) => void;
   onClearSearch?: () => void;
+
+  // Challenge 11
+  isSearching?: boolean;
 }
 
 function FilterBar({
@@ -20,6 +23,7 @@ function FilterBar({
   searchText = "",
   onSearchChange,
   onClearSearch,
+  isSearching = false,
 }: FilterBarProps) {
   return (
     <div id="filter-bar">
@@ -49,21 +53,10 @@ function FilterBar({
         value={sortOrder}
         onChange={(e) => onSortChange(e.target.value)}
       >
-        <option value="recent">
-          Recently Added
-        </option>
-
-        <option value="high">
-          Priority: High to Low
-        </option>
-
-        <option value="low">
-          Priority: Low to High
-        </option>
-
-        <option value="alphabetical">
-          Alphabetical
-        </option>
+        <option value="recent">Recently Added</option>
+        <option value="high">Priority: High to Low</option>
+        <option value="low">Priority: Low to High</option>
+        <option value="alphabetical">Alphabetical</option>
       </select>
 
       <input
@@ -71,10 +64,12 @@ function FilterBar({
         type="text"
         placeholder="Search tasks..."
         value={searchText}
-        onChange={(e) =>
-          onSearchChange?.(e.target.value)
-        }
+        onChange={(e) => onSearchChange?.(e.target.value)}
       />
+
+      {isSearching && (
+        <span id="searching-indicator">Searching...</span>
+      )}
 
       {searchText.trim() !== "" && (
         <button
