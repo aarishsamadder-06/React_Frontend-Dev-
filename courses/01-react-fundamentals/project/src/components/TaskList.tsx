@@ -41,43 +41,63 @@ const defaultTasks: Task[] = [
     id: 2,
     title: "Task Two",
     description: "Description Two",
-    priority: "Medium",
+    priority: "High",
     completed: false,
   },
   {
     id: 3,
     title: "Task Three",
     description: "Description Three",
-    priority: "High",
+    priority: "Medium",
     completed: false,
   },
 ];
 
 export default function TaskList({
   tasks = defaultTasks,
+  countText,
   onToggle,
   onDelete,
   onUpdateTask,
   editingId,
   setEditingId,
 }: TaskListProps) {
+  const completedCount = tasks.filter(
+    (t) => t.completed
+  ).length;
+
+  const resolvedCountText =
+    countText ??
+    `${tasks.length} Tasks`;
+
   return (
-    <section id="task-list">
-      {tasks.map((task) => (
-        <TaskCard
-          key={task.id}
-          id={task.id}
-          title={task.title}
-          description={task.description}
-          priority={task.priority}
-          completed={task.completed}
-          onToggle={onToggle}
-          onDelete={onDelete}
-          onUpdateTask={onUpdateTask}
-          editingId={editingId}
-          setEditingId={setEditingId}
-        />
-      ))}
-    </section>
+    <div>
+      <div id="task-count">
+        {resolvedCountText}
+        {onToggle !== undefined && (
+          <span>
+            {" "}· {completedCount} of {tasks.length} completed
+          </span>
+        )}
+      </div>
+
+      <section id="task-list">
+        {tasks.map((task) => (
+          <TaskCard
+            key={task.id}
+            id={task.id}
+            title={task.title}
+            description={task.description}
+            priority={task.priority}
+            completed={task.completed}
+            onToggle={onToggle}
+            onDelete={onDelete}
+            onUpdateTask={onUpdateTask}
+            editingId={editingId}
+            setEditingId={setEditingId}
+          />
+        ))}
+      </section>
+    </div>
   );
 }
