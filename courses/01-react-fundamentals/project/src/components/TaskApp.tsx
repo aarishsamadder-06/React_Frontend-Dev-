@@ -65,6 +65,7 @@ export default function TaskApp({
       priority: string;
       category: string;
       tags: string[];
+      dueDate?: string;
     }
   ) {
     if (!setTasks) return;
@@ -131,6 +132,15 @@ export default function TaskApp({
     }
     if (sortOrder === "alphabetical") {
       return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
+    }
+    if (sortOrder === "dueDate") {
+      // Tasks without a due date sort to the end
+      if (!a.dueDate && !b.dueDate) return 0;
+      if (!a.dueDate) return 1;
+      if (!b.dueDate) return -1;
+      return (
+        new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime()
+      );
     }
     return 0;
   });

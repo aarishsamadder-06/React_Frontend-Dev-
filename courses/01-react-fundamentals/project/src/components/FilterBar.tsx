@@ -65,6 +65,7 @@ function FilterBar({
         <option value="high">Priority: High to Low</option>
         <option value="low">Priority: Low to High</option>
         <option value="alphabetical">Alphabetical</option>
+        <option value="dueDate">Due Date (Soonest First)</option>
       </select>
 
       <select

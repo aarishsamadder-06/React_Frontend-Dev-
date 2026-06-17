@@ -274,5 +274,28 @@
       "maintainability": 90,
       "overall": "The provided code is well-structured and follows good practices. However, there are some areas that could be improved to make the code more maintainable and efficient."
     }
+  },
+  {
+    "challengeId": "13-due-dates-and-sorting",
+    "challengeName": "Due Dates and Sorting",
+    "aiReview": {
+      "challengeId": "13-due-dates-and-sorting",
+      "timestamp": "2026-06-17T18:50:11.351Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript and functional components makes the code maintainable and efficient.",
+        "The code includes clear and concise comments that explain the functionality."
+      ],
+      "improvements": [
+        "Some of the functions are quite long and complex. Consider breaking them down into smaller, more manageable functions.",
+        "The use of magic numbers (e.g., 3 days for 'Due Soon') could be replaced with named constants for better readability.",
+        "The `getDueStatus` function could be simplified by using a more concise conditional statement."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-organized and follows best practices. However, there are some areas for improvement to make it even more maintainable and efficient."
+    }
   }
 ]

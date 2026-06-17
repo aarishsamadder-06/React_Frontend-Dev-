@@ -67,6 +67,7 @@ function normalizeTask(task: Partial<Task>): Task {
     completed: task.completed ?? false,
     category: task.category ?? "General",
     tags: Array.isArray(task.tags) ? task.tags : [],
+    dueDate: task.dueDate ?? undefined,
   };
 }
 
@@ -77,7 +78,6 @@ function AppContent() {
       if (storedTasks) {
         const parsed = JSON.parse(storedTasks);
         if (Array.isArray(parsed)) {
-          // Normalize: fill in category/tags for old tasks missing them
           return parsed.map(normalizeTask);
         }
       }
@@ -133,6 +133,9 @@ function AppContent() {
               element={<TaskApp tasks={tasks} setTasks={setTasks} showForm showFilterBar onDelete={handleDelete} />} />
 
             <Route path="/challenge/12-categories-and-tags"
+              element={<TaskApp tasks={tasks} setTasks={setTasks} showForm showFilterBar onDelete={handleDelete} />} />
+
+            <Route path="/challenge/13-due-dates-and-sorting"
               element={<TaskApp tasks={tasks} setTasks={setTasks} showForm showFilterBar onDelete={handleDelete} />} />
 
             <Route path="/challenge/21-react-router"

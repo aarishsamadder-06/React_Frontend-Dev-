@@ -7,6 +7,7 @@ interface TaskCardProps {
   completed?: boolean;
   category?: string;
   tags?: string[];
+  dueDate?: string;
   onToggle?: (id: string | number) => void;
   onDelete?: (id: string | number) => void;
   taskId?: string | number;
@@ -23,8 +24,33 @@ interface TaskCardProps {
       priority: string;
       category: string;
       tags: string[];
+      dueDate?: string;
     }
   ) => void;
+}
+
+// Returns 'overdue' | 'today' | 'soon' | null based on due date vs now
+function getDueStatus(
+  dueDate: string | undefined,
+  completed: boolean | undefined
+): "overdue" | "today" | "soon" | null {
+  if (!dueDate || completed) return null;
+
+  const due = new Date(dueDate);
+  due.setHours(0, 0, 0, 0);
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const msPerDay = 1000 * 60 * 60 * 24;
+  const diffDays = Math.round(
+    (due.getTime() - today.getTime()) / msPerDay
+  );
+
+  if (diffDays < 0) return "overdue";
+  if (diffDays === 0) return "today";
+  if (diffDays <= 3) return "soon";
+  return null;
 }
 
 export default function TaskCard({
@@ -34,6 +60,7 @@ export default function TaskCard({
   completed,
   category = "General",
   tags = [],
+  dueDate,
   onToggle,
   onDelete,
   taskId,
@@ -50,6 +77,7 @@ export default function TaskCard({
   const [editPriority, setEditPriority] = useState(priority);
   const [editCategory, setEditCategory] = useState(category);
   const [editTagsInput, setEditTagsInput] = useState(tags.join(", "));
+  const [editDueDate, setEditDueDate] = useState(dueDate ?? "");
 
   useEffect(() => {
     if (isEditing) {
@@ -58,8 +86,9 @@ export default function TaskCard({
       setEditPriority(priority);
       setEditCategory(category);
       setEditTagsInput(tags.join(", "));
+      setEditDueDate(dueDate ?? "");
     }
-  }, [isEditing, title, description, priority, category, tags]);
+  }, [isEditing, title, description, priority, category, tags, dueDate]);
 
   const handleSave = () => {
     if (!editTitle.trim()) return;
@@ -75,6 +104,7 @@ export default function TaskCard({
       priority: editPriority,
       category: editCategory,
       tags: parsedTags,
+      dueDate: editDueDate ? editDueDate : undefined,
     });
 
     setEditingId?.(null);
@@ -86,15 +116,24 @@ export default function TaskCard({
     setEditPriority(priority);
     setEditCategory(category);
     setEditTagsInput(tags.join(", "));
+    setEditDueDate(dueDate ?? "");
     setEditingId?.(null);
   };
+
+  const dueStatus = getDueStatus(dueDate, completed);
+  const isOverdue = dueStatus === "overdue";
 
   return (
     <article
       id="task-card"
       data-completed={completed ? "true" : undefined}
+      data-overdue={isOverdue ? "true" : undefined}
       style={{
-        background: completed ? "#e6ffe6" : undefined,
+        background: completed
+          ? "#e6ffe6"
+          : isOverdue
+          ? "#fee2e2"
+          : undefined,
         padding: "10px",
         marginBottom: "10px",
       }}
@@ -143,6 +182,12 @@ export default function TaskCard({
             onChange={(e) => setEditTagsInput(e.target.value)}
           />
 
+          <input
+            type="date"
+            value={editDueDate}
+            onChange={(e) => setEditDueDate(e.target.value)}
+          />
+
           <button type="button" onClick={handleSave}>
             Save
           </button>
@@ -188,6 +233,29 @@ export default function TaskCard({
                 </span>
               ))}
             </div>
+          )}
+
+          {dueDate && (
+            <p
+              id="task-due-date"
+              style={{
+                color:
+                  dueStatus === "overdue"
+                    ? "#dc2626"
+                    : dueStatus === "today"
+                    ? "#d97706"
+                    : dueStatus === "soon"
+                    ? "#ca8a04"
+                    : undefined,
+                fontWeight:
+                  dueStatus === "overdue" ? "bold" : undefined,
+              }}
+            >
+              Due: {new Date(dueDate).toLocaleDateString()}
+              {dueStatus === "overdue" && " (Overdue)"}
+              {dueStatus === "today" && " (Due Today)"}
+              {dueStatus === "soon" && " (Due Soon)"}
+            </p>
           )}
 
           {setEditingId && (

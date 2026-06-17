@@ -8,6 +8,7 @@ interface Task {
   completed: boolean;
   category: string;
   tags: string[];
+  dueDate?: string;
 }
 
 interface TaskFormProps {
@@ -24,6 +25,7 @@ export default function TaskForm({
   const [priority, setPriority] = useState("Low");
   const [category, setCategory] = useState("General");
   const [tagsInput, setTagsInput] = useState("");
+  const [dueDate, setDueDate] = useState("");
   const [error, setError] = useState("");
 
   const categoryOptions = [
@@ -58,6 +60,7 @@ export default function TaskForm({
       completed: false,
       category,
       tags,
+      dueDate: dueDate ? dueDate : undefined,
     });
 
     setTitle("");
@@ -65,6 +68,7 @@ export default function TaskForm({
     setPriority("Low");
     setCategory("General");
     setTagsInput("");
+    setDueDate("");
   }
 
   return (
@@ -117,6 +121,14 @@ export default function TaskForm({
         placeholder="e.g. urgent, frontend, bug"
         value={tagsInput}
         onChange={(e) => setTagsInput(e.target.value)}
+      />
+
+      <label htmlFor="task-due-date-input">Due Date</label>
+      <input
+        id="task-due-date-input"
+        type="date"
+        value={dueDate}
+        onChange={(e) => setDueDate(e.target.value)}
       />
 
       {error && <p id="task-form-error">{error}</p>}
