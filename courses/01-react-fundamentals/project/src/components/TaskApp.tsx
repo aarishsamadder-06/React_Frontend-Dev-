@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import TaskList from "./TaskList";
 import TaskForm from "./TaskForm";
 import FilterBar from "./FilterBar";
+import StatsPanel from "./StatsPanel";
 import type { Task } from "./TaskList";
 
 interface TaskAppProps {
@@ -10,6 +11,7 @@ interface TaskAppProps {
   showForm?: boolean;
   onDelete?: (id: string | number) => void;
   showFilterBar?: boolean;
+  showStatsPanel?: boolean;
 }
 
 export default function TaskApp({
@@ -18,6 +20,7 @@ export default function TaskApp({
   showForm,
   onDelete,
   showFilterBar,
+  showStatsPanel,
 }: TaskAppProps) {
   const [filter, setFilter] = useState<"all" | "active" | "completed">("all");
   const [sortOrder, setSortOrder] = useState("recent");
@@ -85,11 +88,10 @@ export default function TaskApp({
   }
 
   // Derive unique categories from tasks
-  const categories = [
-    ...new Set(
-      tasks.map((t) => t.category).filter(Boolean)
-    ),
-  ] as string[];
+  const categories = useMemo(
+    () => [...new Set(tasks.map((t) => t.category).filter(Boolean))] as string[],
+    [tasks]
+  );
 
   // 1. Status filter
   const statusFiltered =
@@ -147,6 +149,8 @@ export default function TaskApp({
 
   return (
     <div>
+      {showStatsPanel && <StatsPanel tasks={tasks} />}
+
       {showForm && (
         <TaskForm
           onAddTask={handleAddTask}
