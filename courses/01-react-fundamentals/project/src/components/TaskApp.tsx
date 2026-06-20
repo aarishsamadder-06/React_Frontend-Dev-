@@ -25,17 +25,15 @@ export default function TaskApp({
   const [filter, setFilter] = useState<"all" | "active" | "completed">("all");
   const [sortOrder, setSortOrder] = useState("recent");
 
-  // Raw input value — updates immediately on keystroke
+  
   const [searchText, setSearchText] = useState("");
-  // Debounced value — drives actual filtering
+  
   const [debouncedSearch, setDebouncedSearch] = useState("");
 
-  // Challenge 12: category filter
   const [categoryFilter, setCategoryFilter] = useState("all");
 
   const [editingId, setEditingId] = useState<string | number | null>(null);
 
-  // Debounce: 300ms after typing stops
   useEffect(() => {
     const timer = setTimeout(() => {
       setDebouncedSearch(searchText);
@@ -87,13 +85,11 @@ export default function TaskApp({
     setDebouncedSearch("");
   }
 
-  // Derive unique categories from tasks
   const categories = useMemo(
     () => [...new Set(tasks.map((t) => t.category).filter(Boolean))] as string[],
     [tasks]
   );
 
-  // 1. Status filter
   const statusFiltered =
     filter === "all"
       ? tasks
@@ -101,7 +97,6 @@ export default function TaskApp({
       ? tasks.filter((t) => !t.completed)
       : tasks.filter((t) => t.completed);
 
-  // 2. Category filter
   const categoryFiltered =
     categoryFilter === "all"
       ? statusFiltered
@@ -109,7 +104,6 @@ export default function TaskApp({
           (t) => t.category === categoryFilter
         );
 
-  // 3. Search filter (debounced)
   const searchedTasks = categoryFiltered.filter((task) => {
     const search = debouncedSearch.toLowerCase();
     return (
@@ -118,7 +112,6 @@ export default function TaskApp({
     );
   });
 
-  // 4. Sort
   const priorityValue: Record<string, number> = {
     High: 3,
     Medium: 2,
