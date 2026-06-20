@@ -3,9 +3,7 @@ import { join } from 'path';
 import { parse } from '@babel/parser';
 import traverse from '@babel/traverse';
 
-/**
- * Checks architecture patterns using AST parsing
- */
+
 export async function checkArchitecture(challengeMetadata, projectDir) {
   const patternsRequired = challengeMetadata.patternsRequired || [];
   const filesToCheck = challengeMetadata.filesToCheck || [];
@@ -26,7 +24,6 @@ export async function checkArchitecture(challengeMetadata, projectDir) {
     details: []
   };
 
-  // Aggregate: a pattern "passes" if found in at least one file (project-level)
   const foundAnywhere = new Set();
 
   for (const file of filesToCheck) {
@@ -61,7 +58,6 @@ export async function checkArchitecture(challengeMetadata, projectDir) {
     }
   }
 
-  // Score = (required patterns found in at least one file) / total required
   patternsRequired.forEach(p => {
     if (foundAnywhere.has(p)) results.patternsFound.push(p);
     else results.patternsMissing.push(p);
@@ -162,7 +158,6 @@ function checkFileForPatterns(content, patternsRequired, fileName) {
       }
     });
 
-    // Fallbacks for AST edge cases
     if (patternsRequired.includes('functionalComponent') && !foundPatterns.has('functionalComponent')) {
       if (/function\s+[A-Z][A-Za-z0-9]*\s*\(/.test(content) || /const\s+[A-Z][A-Za-z0-9]*\s*=\s*(?:\([^)]*\)\s*=>|function)/.test(content)) {
         foundPatterns.add('functionalComponent');
@@ -193,7 +188,6 @@ function checkFileForPatterns(content, patternsRequired, fileName) {
     }
 
   } catch (error) {
-    // If parsing fails, try simple string matching and regex fallbacks
     const fallbackFound = new Set();
     if (patternsRequired.includes('functionalComponent')) {
       if (/function\s+[A-Z][A-Za-z0-9]*\s*\(/.test(content) || /const\s+[A-Z][A-Za-z0-9]*\s*=\s*(?:\([^)]*\)\s*=>|function)/.test(content)) {
