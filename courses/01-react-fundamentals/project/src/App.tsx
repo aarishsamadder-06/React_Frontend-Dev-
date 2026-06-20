@@ -141,6 +141,9 @@ function AppContent() {
             <Route path="/challenge/14-task-statistics-dashboard"
               element={<TaskApp tasks={tasks} setTasks={setTasks} showForm showFilterBar showStatsPanel onDelete={handleDelete} />} />
 
+            <Route path="/challenge/15-component-organization"
+              element={<TaskApp tasks={tasks} setTasks={setTasks} showForm showFilterBar showStatsPanel onDelete={handleDelete} />} />
+
             <Route path="/challenge/21-react-router"
               element={<TaskApp tasks={tasks} setTasks={setTasks} showForm />} />
 
