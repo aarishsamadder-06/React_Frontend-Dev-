@@ -366,5 +366,28 @@
       "maintainability": 90,
       "overall": "The code is well-written and demonstrates a good understanding of React and TypeScript. However, there are some areas for improvement to make the code more maintainable and efficient."
     }
+  },
+  {
+    "challengeId": "17-custom-hook-uselocalstorage",
+    "challengeName": "Custom Hook - useLocalStorage",
+    "aiReview": {
+      "challengeId": "17-custom-hook-uselocalstorage",
+      "timestamp": "2026-06-20T16:58:38.683Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The use of TypeScript and functional components is well-implemented, making the codebase maintainable and scalable.",
+        "The use of a custom hook (`useLocalStorage`) to manage local storage is a great approach, reducing code duplication and making it easier to manage state.",
+        "The code is well-organized, with clear and concise function names and variable names."
+      ],
+      "improvements": [
+        "The `useLocalStorage` hook could benefit from additional error handling, such as logging or displaying an error message when a parse error occurs.",
+        "Some of the function names, such as `normalizeTask`, could be more descriptive and follow a consistent naming convention.",
+        "The `App` component has a lot of repeated code for handling tasks and theme persistence. Consider extracting this logic into a separate component or hook to reduce code duplication."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and maintainable, with a good use of custom hooks and functional components. However, there are some areas for improvement, such as additional error handling and code duplication, to make the code even more robust and efficient."
+    }
   }
 ]

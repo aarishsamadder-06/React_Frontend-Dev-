@@ -147,6 +147,9 @@ function AppContent() {
             <Route path="/challenge/16-context-api-theme"
               element={<TaskApp tasks={tasks} setTasks={setTasks} showForm showFilterBar showStatsPanel onDelete={handleDelete} />} />
 
+            <Route path="/challenge/17-custom-hook-uselocalstorage"
+            element={<TaskApp tasks={tasks} setTasks={setTasks} showForm showFilterBar showStatsPanel onDelete={handleDelete} />} />
+
             <Route path="/challenge/21-react-router"
               element={<TaskApp tasks={tasks} setTasks={setTasks} showForm />} />
 

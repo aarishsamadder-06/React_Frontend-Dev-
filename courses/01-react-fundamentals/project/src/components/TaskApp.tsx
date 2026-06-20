@@ -129,7 +129,6 @@ export default function TaskApp({
       return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
     }
     if (sortOrder === "dueDate") {
-      // Tasks without a due date sort to the end
       if (!a.dueDate && !b.dueDate) return 0;
       if (!a.dueDate) return 1;
       if (!b.dueDate) return -1;

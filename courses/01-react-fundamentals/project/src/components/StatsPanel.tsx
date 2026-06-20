@@ -1,125 +1,58 @@
 import { useMemo } from "react";
-
-interface StatTask {
-  completed: boolean;
-  priority?: string;
-  category?: string;
-  dueDate?: string;
-}
+import type { Task } from "./TaskList";
 
 interface StatsPanelProps {
-  tasks?: StatTask[];
+  tasks?: Task[];
   total?: number;
   completed?: number;
-}
-
-function isOverdue(task: StatTask): boolean {
-  if (!task.dueDate || task.completed) return false;
-  const due = new Date(task.dueDate);
-  due.setHours(0, 0, 0, 0);
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  return due.getTime() < today.getTime();
+  active?: number;
+  overdue?: number;
 }
 
 export default function StatsPanel({
-  tasks = [],
-  total,
-  completed,
+  tasks,
+  total: totalProp,
+  completed: completedProp,
+  active: activeProp,
+  overdue: overdueProp,
 }: StatsPanelProps) {
   const stats = useMemo(() => {
-    const totalCount = total ?? tasks.length;
-    const completedCount =
-      completed ?? tasks.filter((t) => t.completed).length;
-    const activeCount = totalCount - completedCount;
-    const overdueCount = tasks.filter((t) => isOverdue(t)).length;
-    const completionPercent =
-      totalCount === 0
-        ? 0
-        : Math.round((completedCount / totalCount) * 100);
-
-    const byCategory: Record<string, number> = {};
-    const byPriority: Record<string, number> = {};
-
-    for (const task of tasks) {
-      const cat = task.category || "Uncategorized";
-      byCategory[cat] = (byCategory[cat] ?? 0) + 1;
-
-      const pri = task.priority || "Unspecified";
-      byPriority[pri] = (byPriority[pri] ?? 0) + 1;
+    if (totalProp !== undefined) {
+      const total = totalProp;
+      const completed = completedProp ?? 0;
+      const active = activeProp ?? 0;
+      const overdue = overdueProp ?? 0;
+      const percentage = total === 0 ? 0 : Math.round((completed / total) * 100);
+      return { total, completed, active, overdue, percentage };
     }
 
-    return {
-      totalCount,
-      completedCount,
-      activeCount,
-      overdueCount,
-      completionPercent,
-      byCategory,
-      byPriority,
-    };
-  }, [tasks, total, completed]);
+    const taskList = tasks ?? [];
+    const total = taskList.length;
+    const completed = taskList.filter((t) => t.completed).length;
+    const active = total - completed;
+    const overdue = taskList.filter((t) => {
+      if (t.completed || !t.dueDate) return false;
+      return new Date(t.dueDate).getTime() < Date.now();
+    }).length;
+    const percentage = total === 0 ? 0 : Math.round((completed / total) * 100);
+    return { total, completed, active, overdue, percentage };
+  }, [tasks, totalProp, completedProp, activeProp, overdueProp]);
 
   return (
-    <div id="stats-panel">
-      <div id="stats-summary">
-        <p id="stats-total">Total tasks: {stats.totalCount}</p>
-        <p id="stats-completed">
-          Completed: {stats.completedCount} ({stats.completionPercent}%)
-        </p>
-        <p id="stats-active">Active: {stats.activeCount}</p>
-        <p id="stats-overdue">Overdue: {stats.overdueCount}</p>
-      </div>
-
+    <section id="stats-panel">
+      <h2>Task Statistics</h2>
+      <div>Total: {stats.total}</div>
+      <div>Completed: {stats.completed}</div>
+      <div>Active: {stats.active}</div>
+      <div>Overdue: {stats.overdue}</div>
       <div
-        id="stats-progress-bar"
         role="progressbar"
-        aria-valuenow={stats.completionPercent}
+        aria-valuenow={stats.percentage}
         aria-valuemin={0}
         aria-valuemax={100}
-        style={{
-          background: "#e5e7eb",
-          borderRadius: "9999px",
-          height: "10px",
-          width: "100%",
-          overflow: "hidden",
-        }}
       >
-        <div
-          style={{
-            background: "#22c55e",
-            height: "100%",
-            width: `${stats.completionPercent}%`,
-            transition: "width 0.2s ease",
-          }}
-        />
+        {stats.percentage}%
       </div>
-
-      {Object.keys(stats.byCategory).length > 0 && (
-        <div id="stats-by-category">
-          <h3>By Category</h3>
-          <ul>
-            {Object.entries(stats.byCategory).map(([cat, count]) => (
-              <li key={cat}>
-                {cat}: {count}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      {Object.keys(stats.byPriority).length > 0 && (
-        <div id="stats-by-priority">
-          <h3>By Priority</h3>
-          <ul>
-            {Object.entries(stats.byPriority).map(([pri, count]) => (
-              <li key={pri}>
-                {pri}: {count}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
+    </section>
   );
 }
