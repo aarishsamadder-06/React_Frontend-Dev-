@@ -1,4 +1,8 @@
 import { useEffect, useState } from "react";
+import Button from "./Button";
+import Badge from "./Badge";
+import StatusIndicator from "./StatusIndicator";
+import type { TaskStatus } from "./StatusIndicator";
 
 interface TaskCardProps {
   title: string;
@@ -29,11 +33,10 @@ interface TaskCardProps {
   ) => void;
 }
 
-// Returns 'overdue' | 'today' | 'soon' | null based on due date vs now
 function getDueStatus(
   dueDate: string | undefined,
   completed: boolean | undefined
-): "overdue" | "today" | "soon" | null {
+): TaskStatus | null {
   if (!dueDate || completed) return null;
 
   const due = new Date(dueDate);
@@ -48,9 +51,17 @@ function getDueStatus(
   );
 
   if (diffDays < 0) return "overdue";
-  if (diffDays === 0) return "today";
-  if (diffDays <= 3) return "soon";
+  if (diffDays === 0) return "due-today";
+  if (diffDays <= 3) return "due-soon";
   return null;
+}
+
+function priorityBadgeVariant(
+  priority: string
+): "priority-low" | "priority-medium" | "priority-high" {
+  if (priority === "High") return "priority-high";
+  if (priority === "Medium") return "priority-medium";
+  return "priority-low";
 }
 
 export default function TaskCard({
@@ -188,13 +199,13 @@ export default function TaskCard({
             onChange={(e) => setEditDueDate(e.target.value)}
           />
 
-          <button type="button" onClick={handleSave}>
+          <Button type="button" variant="primary" onClick={handleSave}>
             Save
-          </button>
+          </Button>
 
-          <button type="button" onClick={handleCancel}>
+          <Button type="button" variant="secondary" onClick={handleCancel}>
             Cancel
-          </button>
+          </Button>
         </>
       ) : (
         <>
@@ -210,66 +221,50 @@ export default function TaskCard({
             {description}
           </p>
 
-          <p>Priority: {priority}</p>
+          <p>
+            Priority:{" "}
+            <Badge variant={priorityBadgeVariant(priority)}>
+              {priority}
+            </Badge>
+          </p>
 
-          <p id="task-category">Category: {category}</p>
+          <p id="task-category">
+            Category: <Badge variant="category">{category}</Badge>
+          </p>
 
           {tags.length > 0 && (
             <div id="task-tags">
               {tags.map((tag) => (
-                <span
-                  key={tag}
-                  data-tag={tag}
-                  style={{
-                    display: "inline-block",
-                    background: "#dbeafe",
-                    borderRadius: "9999px",
-                    padding: "2px 8px",
-                    marginRight: "4px",
-                    fontSize: "0.75rem",
-                  }}
-                >
+                <Badge key={tag} variant="tag" dataValue={tag}>
                   {tag}
-                </span>
+                </Badge>
               ))}
             </div>
           )}
 
           {dueDate && (
-            <p
-              id="task-due-date"
-              style={{
-                color:
-                  dueStatus === "overdue"
-                    ? "#dc2626"
-                    : dueStatus === "today"
-                    ? "#d97706"
-                    : dueStatus === "soon"
-                    ? "#ca8a04"
-                    : undefined,
-                fontWeight:
-                  dueStatus === "overdue" ? "bold" : undefined,
-              }}
-            >
+            <p id="task-due-date">
               Due: {new Date(dueDate).toLocaleDateString()}
-              {dueStatus === "overdue" && " (Overdue)"}
-              {dueStatus === "today" && " (Due Today)"}
-              {dueStatus === "soon" && " (Due Soon)"}
+              {dueStatus && <StatusIndicator status={dueStatus} />}
             </p>
           )}
 
+          {completed && <StatusIndicator status="completed" />}
+
           {setEditingId && (
-            <button
+            <Button
               type="button"
+              variant="secondary"
               onClick={() => setEditingId(resolvedId)}
             >
               Edit
-            </button>
+            </Button>
           )}
 
           {onDelete && (
-            <button
+            <Button
               type="button"
+              variant="danger"
               onClick={() => {
                 if (
                   window.confirm(
@@ -281,7 +276,7 @@ export default function TaskCard({
               }}
             >
               Delete
-            </button>
+            </Button>
           )}
         </>
       )}

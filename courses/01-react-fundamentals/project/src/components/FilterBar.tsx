@@ -1,3 +1,6 @@
+import Button from "./Button";
+import FormInput from "./FormInput";
+
 type Filter = "all" | "active" | "completed";
 
 interface FilterBarProps {
@@ -6,15 +9,12 @@ interface FilterBarProps {
   sortOrder: string;
   onSortChange: (value: string) => void;
 
-  // Challenge 09
   searchText?: string;
   onSearchChange?: (value: string) => void;
   onClearSearch?: () => void;
 
-  // Challenge 11
   isSearching?: boolean;
 
-  // Challenge 12
   categoryFilter?: string;
   onCategoryChange?: (category: string) => void;
   categories?: string[];
@@ -35,26 +35,29 @@ function FilterBar({
 }: FilterBarProps) {
   return (
     <div id="filter-bar">
-      <button
-        data-active={filter === "all"}
+      <Button
+        variant={filter === "all" ? "primary" : "secondary"}
+        dataActive={filter === "all"}
         onClick={() => onFilterChange("all")}
       >
         All
-      </button>
+      </Button>
 
-      <button
-        data-active={filter === "active"}
+      <Button
+        variant={filter === "active" ? "primary" : "secondary"}
+        dataActive={filter === "active"}
         onClick={() => onFilterChange("active")}
       >
         Active
-      </button>
+      </Button>
 
-      <button
-        data-active={filter === "completed"}
+      <Button
+        variant={filter === "completed" ? "primary" : "secondary"}
+        dataActive={filter === "completed"}
         onClick={() => onFilterChange("completed")}
       >
         Completed
-      </button>
+      </Button>
 
       <select
         id="sort-order"
@@ -81,7 +84,7 @@ function FilterBar({
         ))}
       </select>
 
-      <input
+      <FormInput
         id="search-input"
         type="text"
         placeholder="Search tasks..."
@@ -94,13 +97,14 @@ function FilterBar({
       )}
 
       {searchText.trim() !== "" && (
-        <button
+        <Button
           id="clear-search"
           type="button"
+          variant="secondary"
           onClick={() => onClearSearch?.()}
         >
           Clear search
-        </button>
+        </Button>
       )}
     </div>
   );

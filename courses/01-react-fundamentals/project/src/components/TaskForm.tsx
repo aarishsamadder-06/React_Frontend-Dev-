@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Button from "./Button";
+import FormInput from "./FormInput";
 
 interface Task {
   id: string | number;
@@ -73,21 +75,23 @@ export default function TaskForm({
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="task-title">Title</label>
-      <input
+      <FormInput
         id="task-title"
+        label="Title"
         type="text"
         placeholder="Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
+        error={error || undefined}
       />
 
-      <label htmlFor="task-description">Description</label>
-      <textarea
+      <FormInput
         id="task-description"
+        label="Description"
         placeholder="Description"
         value={description}
         onChange={(e) => setDescription(e.target.value)}
+        multiline
       />
 
       <label htmlFor="task-priority">Priority</label>
@@ -114,18 +118,17 @@ export default function TaskForm({
         ))}
       </select>
 
-      <label htmlFor="task-tags">Tags (comma-separated)</label>
-      <input
+      <FormInput
         id="task-tags"
-        type="text"
+        label="Tags (comma-separated)"
         placeholder="e.g. urgent, frontend, bug"
         value={tagsInput}
         onChange={(e) => setTagsInput(e.target.value)}
       />
 
-      <label htmlFor="task-due-date-input">Due Date</label>
-      <input
+      <FormInput
         id="task-due-date-input"
+        label="Due Date"
         type="date"
         value={dueDate}
         onChange={(e) => setDueDate(e.target.value)}
@@ -133,7 +136,9 @@ export default function TaskForm({
 
       {error && <p id="task-form-error">{error}</p>}
 
-      <button type="submit">Add Task</button>
+      <Button type="submit" variant="primary">
+        Add Task
+      </Button>
     </form>
   );
 }
