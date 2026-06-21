@@ -389,5 +389,28 @@
       "maintainability": 90,
       "overall": "The code is well-structured and maintainable, with a good use of custom hooks and functional components. However, there are some areas for improvement, such as additional error handling and code duplication, to make the code even more robust and efficient."
     }
+  },
+  {
+    "challengeId": "18-usereducer-complex-state",
+    "challengeName": "useReducer - Complex State Management",
+    "aiReview": {
+      "challengeId": "18-usereducer-complex-state",
+      "timestamp": "2026-06-21T15:28:59.110Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The use of TypeScript and functional components makes the codebase maintainable and scalable.",
+        "The separation of concerns between the reducer and the components makes the code easier to understand and modify.",
+        "The use of action creators and a clear action type system makes the code more predictable and easier to test."
+      ],
+      "improvements": [
+        "Some of the reducer functions could be simplified using the `reduce` method or other array methods.",
+        "The `taskReducer` could be split into smaller reducers, each handling a specific type of action.",
+        "The `useReducer` hook could be used more consistently throughout the codebase, instead of mixing it with `useState`."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The codebase is well-structured and maintainable, with a clear separation of concerns and a good use of functional programming principles. However, there are some opportunities for improvement, such as simplifying the reducer functions and using the `useReducer` hook more consistently."
+    }
   }
 ]
