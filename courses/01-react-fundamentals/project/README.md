@@ -68,12 +68,12 @@ npm run review -- --challenge=01-static-task-display
 
 ## 📊 Progress Evidence
 
-*Auto-updated when you run review. Last run: 21/6/2026, 9:41:22 pm*
+*Auto-updated when you run review. Last run: 22/6/2026, 9:54:20 pm*
 
 | Metric | Value |
 |--------|-------|
-| Challenges completed | 20 / 23 (87%) |
-| Average score | 81.7% |
+| Challenges completed | 22 / 23 (95.7%) |
+| Average score | 81.3% |
 
 | Challenge | Skills covered | Status |
 |-----------|----------------|--------|
@@ -97,9 +97,9 @@ npm run review -- --challenge=01-static-task-display
 | useReducer - Complex State Management | useReducer, Reducer functions, Action objects, Dispatch pattern, Complex state logic | Passed |
 | Performance Optimization | React.memo, useCallback, useMemo, Re-render optimization | Passed |
 | Error Boundaries and Error Handling | Error boundaries, Class component, Error handling, Fallback UI, try-catch | Passed |
-| React Router - Routing and Navigation | React Router, Route, Link, useNavigate, useParams, URL-driven UI, Dynamic segments | — |
-| Data Fetching - Loading and Error State | fetch, useEffect, Loading state, Error state, Async data, Conditional rendering | — |
-| useRef - Focus Management | useRef, ref.current, Focus management, DOM access, useEffect with ref | — |
+| React Router - Routing and Navigation | React Router, Route, Link, useNavigate, useParams, URL-driven UI, Dynamic segments | Not passed |
+| Data Fetching - Loading and Error State | fetch, useEffect, Loading state, Error state, Async data, Conditional rendering | Passed |
+| useRef - Focus Management | useRef, ref.current, Focus management, DOM access, useEffect with ref | Passed |
 
 ## 📋 Challenge Workflow
 

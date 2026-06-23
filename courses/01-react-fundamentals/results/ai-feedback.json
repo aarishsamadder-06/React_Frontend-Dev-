@@ -458,5 +458,67 @@
       "maintainability": 90,
       "overall": "The code is well-structured, readable, and maintainable. It demonstrates a good understanding of modern front-end development principles and best practices. However, there are some minor improvements that could be made to enhance the code's robustness and user experience."
     }
+  },
+  {
+    "challengeId": "22-data-fetching",
+    "challengeName": "Data Fetching - Loading and Error State",
+    "aiReview": {
+      "challengeId": "22-data-fetching",
+      "timestamp": "2026-06-22T10:44:12.765Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code uses functional components and follows a clear and consistent structure.",
+        "The use of `useState` and `useEffect` is well-implemented and easy to understand.",
+        "The code is well-organized and easy to navigate."
+      ],
+      "improvements": [
+        "The `cancelled` flag in the `useEffect` cleanup function is not necessary. Instead, you can use the `AbortController` API to cancel the fetch request. This will make the code more robust and easier to maintain.",
+        "The error handling in the `catch` block can be improved. Instead of setting the error message to the error object, you can extract the error message from the error object. This will make the error handling more robust and easier to understand.",
+        "The code can benefit from more comments and documentation. This will make it easier for others to understand the code and will also help with code maintenance."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and easy to understand. It uses functional components and follows a clear and consistent structure. However, there are some areas for improvement, such as using the `AbortController` API and improving error handling. With some additional comments and documentation, this code will be even more maintainable and robust."
+    }
+  },
+  {
+    "challengeId": "23-useref-focus-management",
+    "challengeName": "useRef - Focus Management",
+    "aiReview": {
+      "challengeId": "23-useref-focus-management",
+      "timestamp": "2026-06-22T11:04:06.572Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and easy to follow, with clear separation of concerns between components.",
+        "The use of TypeScript and React hooks is well-implemented, making the code more maintainable and efficient.",
+        "The code is well-documented, with clear and concise comments explaining the purpose of each section."
+      ],
+      "improvements": [
+        "Some of the function names could be more descriptive, making it easier to understand their purpose without having to read the code.",
+        "There are some repeated code patterns, such as the use of `useEffect` with an empty dependency array, which could be extracted into a separate function for better reusability.",
+        "The `TaskApp` component is quite large and complex, making it harder to maintain and understand. Consider breaking it down into smaller, more focused components."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and maintainable, with a good balance between functionality and readability. However, there are some areas for improvement, such as more descriptive function names and a more modular component architecture."
+    }
+  },
+  {
+    "challengeId": "21-react-router",
+    "challengeName": "React Router - Routing and Navigation",
+    "aiReview": {
+      "challengeId": "21-react-router",
+      "timestamp": "2026-06-22T16:24:20.620Z",
+      "score": 0,
+      "feedback": [],
+      "strengths": [],
+      "improvements": [],
+      "readability": 0,
+      "maintainability": 0,
+      "overall": "",
+      "error": "Groq API error (413): Request too large for model `llama-3.1-8b-instant` in organization `org_01kt9g65xef5ja3kmbjfp9qtme` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Requested 6488, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+    }
   }
 ]

@@ -1,4 +1,4 @@
-import type { ChangeEvent } from "react";
+import type { ChangeEvent, Ref } from "react";
 
 export interface FormInputProps {
   id?: string;
@@ -9,6 +9,7 @@ export interface FormInputProps {
   placeholder?: string;
   error?: string;
   multiline?: boolean;
+  inputRef?: Ref<HTMLInputElement>;
 }
 
 export default function FormInput({
@@ -20,6 +21,7 @@ export default function FormInput({
   placeholder,
   error,
   multiline = false,
+  inputRef,
 }: FormInputProps) {
   return (
     <div>
@@ -39,6 +41,7 @@ export default function FormInput({
           value={value}
           placeholder={placeholder}
           onChange={onChange}
+          ref={inputRef}
         />
       )}
 

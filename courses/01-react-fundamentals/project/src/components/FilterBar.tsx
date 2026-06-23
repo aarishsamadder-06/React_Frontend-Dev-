@@ -1,3 +1,4 @@
+import { useRef, useEffect } from "react";
 import Button from "./Button";
 import FormInput from "./FormInput";
 
@@ -33,6 +34,12 @@ function FilterBar({
   onCategoryChange,
   categories = [],
 }: FilterBarProps) {
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    searchInputRef.current?.focus();
+  }, []);
+
   return (
     <div id="filter-bar">
       <Button
@@ -90,6 +97,7 @@ function FilterBar({
         placeholder="Search tasks..."
         value={searchText}
         onChange={(e) => onSearchChange?.(e.target.value)}
+        inputRef={searchInputRef}
       />
 
       {isSearching && (

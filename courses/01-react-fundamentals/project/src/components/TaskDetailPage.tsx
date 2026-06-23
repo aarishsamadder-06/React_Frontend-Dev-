@@ -3,17 +3,13 @@ import type { Task } from "./TaskList";
 
 const STORAGE_KEY = "task-app-tasks";
 
-function getTaskById(
-  id: string | undefined
-): Task | undefined {
+function getTaskById(id: string | undefined): Task | undefined {
   if (!id) return undefined;
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (!stored) return undefined;
     const tasks: Task[] = JSON.parse(stored);
-    return tasks.find(
-      (t) => String(t.id) === String(id)
-    );
+    return tasks.find((t) => String(t.id) === String(id));
   } catch {
     return undefined;
   }
@@ -25,36 +21,33 @@ export default function TaskDetailPage() {
   const task = getTaskById(id);
 
   return (
-    <div id="task-detail">
+    <div id="task-detail-page">
       <button
         id="task-detail-back"
-        onClick={() => navigate(-1)}
+        onClick={() => navigate("/challenge/21-react-router")}
       >
-        Back
+        Back to list
       </button>
 
       {task ? (
         <>
-          <h2 id="task-detail-title">
-            {task.title}
-          </h2>
-          <p id="task-detail-description">
-            {task.description}
-          </p>
-          <p id="task-detail-priority">
-            Priority: {task.priority}
-          </p>
+          <h2 id="task-detail-title">{task.title}</h2>
+          <p id="task-detail-description">{task.description}</p>
+          <p id="task-detail-priority">Priority: {task.priority}</p>
           <p id="task-detail-status">
-            Status:{" "}
-            {task.completed
-              ? "Completed"
-              : "Active"}
+            Status: {task.completed ? "Completed" : "Active"}
           </p>
+          {task.category && (
+            <p id="task-detail-category">Category: {task.category}</p>
+          )}
+          {task.dueDate && (
+            <p id="task-detail-due-date">
+              Due: {new Date(task.dueDate).toLocaleDateString()}
+            </p>
+          )}
         </>
       ) : (
-        <p id="task-detail-not-found">
-          Task not found
-        </p>
+        <p id="task-detail-not-found">Task not found</p>
       )}
     </div>
   );
