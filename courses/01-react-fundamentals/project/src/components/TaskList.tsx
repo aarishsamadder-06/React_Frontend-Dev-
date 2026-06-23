@@ -6,104 +6,65 @@ export interface Task {
   description: string;
   priority: string;
   completed: boolean;
-  category: string;
-  tags: string[];
+  category?: string;
+  tags?: string[];
   dueDate?: string;
 }
 
 interface TaskListProps {
   tasks?: Task[];
-  countText?: string;
   onToggle?: (id: string | number) => void;
   onDelete?: (id: string | number) => void;
-  linkToTaskDetail?: boolean;
-
-  onUpdateTask?: (
-    id: string | number,
-    updates: {
-      title: string;
-      description: string;
-      priority: string;
-    }
-  ) => void;
-
+  countText?: string;
+  onUpdateTask?: (id: string | number, updates: { title: string; description: string; priority: string }) => void;
   editingId?: string | number | null;
   setEditingId?: (id: string | number | null) => void;
+  linkToTaskDetail?: boolean;
 }
 
 const defaultTasks: Task[] = [
-  {
-    id: 1,
-    title: "Task One",
-    description: "Description One",
-    priority: "Low",
-    completed: false,
-    category: "General",
-    tags: [],
-  },
-  {
-    id: 2,
-    title: "Task Two",
-    description: "Description Two",
-    priority: "High",
-    completed: false,
-    category: "Work",
-    tags: [],
-  },
-  {
-    id: 3,
-    title: "Task Three",
-    description: "Description Three",
-    priority: "Medium",
-    completed: false,
-    category: "Personal",
-    tags: [],
-  },
+  { id: 1, title: "Task One", description: "First task", priority: "High", completed: false },
+  { id: 2, title: "Task Two", description: "Second task", priority: "Medium", completed: true },
+  { id: 3, title: "Task Three", description: "Third task", priority: "Low", completed: false },
 ];
 
-export default function TaskList({
+function TaskList({
   tasks = defaultTasks,
-  countText,
   onToggle,
   onDelete,
+  countText,
   onUpdateTask,
   editingId,
   setEditingId,
   linkToTaskDetail,
 }: TaskListProps) {
-  const completedCount = tasks.filter((t) => t.completed).length;
-  const resolvedCountText = countText ?? `${tasks.length} Tasks`;
+  const completedCount = tasks.filter((task) => task.completed).length;
 
   return (
-    <div>
-      <div id="task-count">
-        {resolvedCountText}
-        {onToggle !== undefined && (
-          <span>
-            {" "}· {completedCount} of {tasks.length} completed
-          </span>
-        )}
-      </div>
+    <section id="task-list">
+      <p id="task-count">
+        {countText ?? `${completedCount} of ${tasks.length} completed`}
+      </p>
 
-      <section id="task-list">
-        {tasks.map((task) => (
-          <TaskCard
-            key={task.id}
-            id={task.id}
-            title={task.title}
-            description={task.description}
-            priority={task.priority}
-            completed={task.completed}
-            dueDate={task.dueDate}
-            onToggle={onToggle}
-            onDelete={onDelete}
-            onUpdateTask={onUpdateTask}
-            editingId={editingId}
-            setEditingId={setEditingId}
-            linkToTaskDetail={linkToTaskDetail}
-          />
-        ))}
-      </section>
-    </div>
+      {tasks.map((task) => (
+        <TaskCard
+          key={task.id}
+          id={Number(task.id)}
+          title={task.title}
+          description={task.description}
+          priority={task.priority}
+          completed={task.completed}
+          onToggle={onToggle ? (id) => onToggle(id) : undefined}
+          onDelete={onDelete ? (id) => onDelete(id) : undefined}
+          onUpdate={onUpdateTask ? (updates) => onUpdateTask(task.id, updates) : undefined}
+          isEditing={editingId === task.id}
+          onEditStart={setEditingId ? () => setEditingId(task.id) : undefined}
+          onEditCancel={setEditingId ? () => setEditingId(null) : undefined}
+          linkToTaskDetail={linkToTaskDetail}
+        />
+      ))}
+    </section>
   );
 }
+
+export default TaskList;

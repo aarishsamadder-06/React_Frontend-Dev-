@@ -36,40 +36,77 @@ export default function TaskApp({
     const timeout = window.setTimeout(() => {
       setDebouncedSearch(searchText);
     }, 300);
+
     return () => clearTimeout(timeout);
   }, [searchText]);
 
-  const handleAddTask = useCallback((task: Task) => {
-    if (setTasks) setTasks((prev) => [...prev, task]);
-  }, [setTasks]);
+  const handleAddTask = useCallback(
+    (task: Task) => {
+      if (setTasks) {
+        setTasks((prev) => [...prev, task]);
+      }
+    },
+    [setTasks]
+  );
 
-  const handleToggle = useCallback((id: string | number) => {
-    if (!setTasks) return;
-    setTasks((prev) =>
-      prev.map((task) =>
-        task.id === id ? { ...task, completed: !task.completed } : task
-      )
-    );
-  }, [setTasks]);
+  const handleToggle = useCallback(
+    (id: string | number) => {
+      if (!setTasks) return;
 
-  const handleUpdateTask = useCallback((
-    id: string | number,
-    updates: { title: string; description: string; priority: string }
-  ) => {
-    if (!setTasks) return;
-    if (!updates.title.trim()) return;
-    setTasks((prev) =>
-      prev.map((task) => task.id === id ? { ...task, ...updates } : task)
-    );
-    setEditingId(null);
-  }, [setTasks]);
+      setTasks((prev) =>
+        prev.map((task) =>
+          task.id === id
+            ? { ...task, completed: !task.completed }
+            : task
+        )
+      );
+    },
+    [setTasks]
+  );
 
-  const categories = useMemo(() => [
-    ...new Set(tasks.map((task) => task.category).filter(Boolean)),
-  ], [tasks]);
+  const handleUpdateTask = useCallback(
+    (
+      id: string | number,
+      updates: {
+        title: string;
+        description: string;
+        priority: string;
+      }
+    ) => {
+      if (!setTasks) return;
+      if (!updates.title.trim()) return;
+
+      setTasks((prev) =>
+        prev.map((task) =>
+          task.id === id ? { ...task, ...updates } : task
+        )
+      );
+
+      setEditingId(null);
+    },
+    [setTasks]
+  );
+
+  const categories = useMemo<string[]>(
+    () => [
+      ...new Set(
+        tasks
+          .map((task) => task.category)
+          .filter(
+            (category): category is string =>
+              typeof category === "string" && category.trim() !== ""
+          )
+      ),
+    ],
+    [tasks]
+  );
 
   const sortedTasks = useMemo(() => {
-    const priorityValue: Record<string, number> = { High: 3, Medium: 2, Low: 1 };
+    const priorityValue: Record<string, number> = {
+      High: 3,
+      Medium: 2,
+      Low: 1,
+    };
 
     const statusFiltered =
       filter === "all"
@@ -81,10 +118,13 @@ export default function TaskApp({
     const categoryFiltered =
       categoryFilter === ""
         ? statusFiltered
-        : statusFiltered.filter((task) => task.category === categoryFilter);
+        : statusFiltered.filter(
+            (task) => task.category === categoryFilter
+          );
 
     const searchedTasks = categoryFiltered.filter((task) => {
       const search = debouncedSearch.toLowerCase();
+
       return (
         task.title.toLowerCase().includes(search) ||
         task.description.toLowerCase().includes(search)
@@ -92,18 +132,40 @@ export default function TaskApp({
     });
 
     return [...searchedTasks].sort((a, b) => {
-      if (sortOrder === "high") return priorityValue[b.priority] - priorityValue[a.priority];
-      if (sortOrder === "low") return priorityValue[a.priority] - priorityValue[b.priority];
-      if (sortOrder === "alphabetical") return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
+      if (sortOrder === "high") {
+        return priorityValue[b.priority] - priorityValue[a.priority];
+      }
+
+      if (sortOrder === "low") {
+        return priorityValue[a.priority] - priorityValue[b.priority];
+      }
+
+      if (sortOrder === "alphabetical") {
+        return a.title
+          .toLowerCase()
+          .localeCompare(b.title.toLowerCase());
+      }
+
       if (sortOrder === "dueDate") {
         if (!a.dueDate && !b.dueDate) return 0;
         if (!a.dueDate) return 1;
         if (!b.dueDate) return -1;
-        return new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime();
+
+        return (
+          new Date(a.dueDate).getTime() -
+          new Date(b.dueDate).getTime()
+        );
       }
+
       return 0;
     });
-  }, [tasks, filter, sortOrder, debouncedSearch, categoryFilter]);
+  }, [
+    tasks,
+    filter,
+    sortOrder,
+    debouncedSearch,
+    categoryFilter,
+  ]);
 
   return (
     <div>
@@ -127,26 +189,21 @@ export default function TaskApp({
         />
       )}
 
-      <div id="task-count">
-        Showing {sortedTasks.length} of {tasks.length} tasks
-      </div>
-
-      {sortedTasks.length === 0 ? (
-        <div id="filter-empty-message">No tasks found</div>
-      ) : (
-        <ErrorBoundary>
+      <ErrorBoundary>
+        {sortedTasks.length === 0 ? (
+          <div id="filter-empty-message">No tasks found</div>
+        ) : (
           <TaskList
             tasks={sortedTasks}
             onToggle={handleToggle}
             onDelete={onDelete}
-            countText={`Showing ${sortedTasks.length} of ${tasks.length} tasks`}
             onUpdateTask={handleUpdateTask}
             editingId={editingId}
             setEditingId={setEditingId}
             linkToTaskDetail={linkToTaskDetail}
           />
-        </ErrorBoundary>
-      )}
+        )}
+      </ErrorBoundary>
     </div>
   );
 }

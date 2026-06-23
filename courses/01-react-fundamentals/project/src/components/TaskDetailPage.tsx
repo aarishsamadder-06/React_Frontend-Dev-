@@ -1,24 +1,15 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import { useLocalStorage } from "../hooks";
 import type { Task } from "./TaskList";
 
-const STORAGE_KEY = "task-app-tasks";
-
-function getTaskById(id: string | undefined): Task | undefined {
-  if (!id) return undefined;
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (!stored) return undefined;
-    const tasks: Task[] = JSON.parse(stored);
-    return tasks.find((t) => String(t.id) === String(id));
-  } catch {
-    return undefined;
-  }
-}
+const INITIAL_TASKS: Task[] = [];
 
 export default function TaskDetailPage() {
-  const { id } = useParams();
+  const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const task = getTaskById(id);
+  const [tasks] = useLocalStorage<Task[]>("task-app-tasks", INITIAL_TASKS);
+
+  const task = tasks.find((t) => String(t.id) === String(id));
 
   return (
     <div id="task-detail-page">
@@ -30,24 +21,19 @@ export default function TaskDetailPage() {
       </button>
 
       {task ? (
-        <>
-          <h2 id="task-detail-title">{task.title}</h2>
-          <p id="task-detail-description">{task.description}</p>
-          <p id="task-detail-priority">Priority: {task.priority}</p>
-          <p id="task-detail-status">
-            Status: {task.completed ? "Completed" : "Active"}
-          </p>
-          {task.category && (
-            <p id="task-detail-category">Category: {task.category}</p>
+        <div>
+          <h2>{task.title}</h2>
+          <p>{task.description}</p>
+          <p>Priority: {task.priority}</p>
+          <p>Status: {task.completed ? "Completed" : "Pending"}</p>
+          {task.category && <p>Category: {task.category}</p>}
+          {task.dueDate && <p>Due: {task.dueDate}</p>}
+          {task.tags && task.tags.length > 0 && (
+            <p>Tags: {task.tags.join(", ")}</p>
           )}
-          {task.dueDate && (
-            <p id="task-detail-due-date">
-              Due: {new Date(task.dueDate).toLocaleDateString()}
-            </p>
-          )}
-        </>
+        </div>
       ) : (
-        <p id="task-detail-not-found">Task not found</p>
+        <p>Task not found.</p>
       )}
     </div>
   );

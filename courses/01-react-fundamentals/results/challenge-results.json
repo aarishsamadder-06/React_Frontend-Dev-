@@ -27375,17 +27375,17 @@
   {
     "challengeId": "21-react-router",
     "challengeName": "React Router - Routing and Navigation",
-    "timestamp": "2026-06-22T16:23:41.131Z",
+    "timestamp": "2026-06-23T07:20:32.637Z",
     "scores": {
       "functionalTests": 98.6,
       "codeQuality": 100,
       "architecture": 100,
       "bestPractices": 100,
       "e2eTests": 0,
-      "aiReview": 0
+      "aiReview": 88
     },
-    "totalScore": 69.50999999999999,
-    "passed": false,
+    "totalScore": 82.71,
+    "passed": true,
     "errors": [],
     "warnings": [],
     "testResults": {
@@ -27418,7 +27418,7 @@
               "fullName": " Challenge 01: Static Task Display TaskCard should use article with id task-card",
               "status": "passed",
               "title": "should use article with id task-card",
-              "duration": 8,
+              "duration": 5,
               "failureMessages": []
             },
             {
@@ -27430,7 +27430,7 @@
               "fullName": " Challenge 01: Static Task Display TaskCard should use semantic HTML (h2 for title)",
               "status": "passed",
               "title": "should use semantic HTML (h2 for title)",
-              "duration": 10,
+              "duration": 3,
               "failureMessages": []
             },
             {
@@ -27442,7 +27442,7 @@
               "fullName": " Challenge 01: Static Task Display TaskList should render 3 TaskCards when no tasks prop",
               "status": "passed",
               "title": "should render 3 TaskCards when no tasks prop",
-              "duration": 23,
+              "duration": 6,
               "failureMessages": []
             },
             {
@@ -27454,7 +27454,7 @@
               "fullName": " Challenge 01: Static Task Display TaskList should have section with id task-list",
               "status": "passed",
               "title": "should have section with id task-list",
-              "duration": 14,
+              "duration": 9,
               "failureMessages": []
             },
             {
@@ -27466,12 +27466,12 @@
               "fullName": " Challenge 01: Static Task Display TaskList should display three different tasks",
               "status": "passed",
               "title": "should display three different tasks",
-              "duration": 26,
+              "duration": 21,
               "failureMessages": []
             }
           ],
-          "startTime": 1782145431433,
-          "endTime": 1782145431578,
+          "startTime": 1782199244533,
+          "endTime": 1782199244641,
           "status": "passed",
           "message": "",
           "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-01.test.tsx"
@@ -27486,7 +27486,7 @@
               "fullName": " Challenge 02: Dynamic Task Rendering should render tasks from tasks prop",
               "status": "passed",
               "title": "should render tasks from tasks prop",
-              "duration": 108,
+              "duration": 95,
               "failureMessages": []
             },
             {
@@ -27497,7 +27497,7 @@
               "fullName": " Challenge 02: Dynamic Task Rendering should display task count with id task-count",
               "status": "passed",
               "title": "should display task count with id task-count",
-              "duration": 20,
+              "duration": 22,
               "failureMessages": []
             },
             {
@@ -27508,7 +27508,7 @@
               "fullName": " Challenge 02: Dynamic Task Rendering should use unique keys when mapping (no duplicate keys)",
               "status": "passed",
               "title": "should use unique keys when mapping (no duplicate keys)",
-              "duration": 7,
+              "duration": 5,
               "failureMessages": []
             },
             {
@@ -27523,8 +27523,8 @@
               "failureMessages": []
             }
           ],
-          "startTime": 1782145431440,
-          "endTime": 1782145431577,
+          "startTime": 1782199244541,
+          "endTime": 1782199244664,
           "status": "passed",
           "message": "",
           "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-02.test.tsx"
@@ -27539,7 +27539,7 @@
               "fullName": " Challenge 03: Adding New Tasks should have controlled title input",
               "status": "passed",
               "title": "should have controlled title input",
-              "duration": 384,
+              "duration": 396,
               "failureMessages": []
             },
             {
@@ -27550,7 +27550,7 @@
               "fullName": " Challenge 03: Adding New Tasks should have Add Task submit button",
               "status": "passed",
               "title": "should have Add Task submit button",
-              "duration": 83,
+              "duration": 98,
               "failureMessages": []
             },
             {
@@ -27561,7 +27561,7 @@
               "fullName": " Challenge 03: Adding New Tasks should call onAddTask with new task when title filled and submitted",
               "status": "passed",
               "title": "should call onAddTask with new task when title filled and submitted",
-              "duration": 409,
+              "duration": 368,
               "failureMessages": []
             },
             {
@@ -27572,7 +27572,7 @@
               "fullName": " Challenge 03: Adding New Tasks should show error when title is empty on submit",
               "status": "failed",
               "title": "should show error when title is empty on submit",
-              "duration": 248,
+              "duration": 207,
               "failureMessages": [
                 "Found multiple elements with the text: /Title is required/i\n\nHere are the matching elements:\n\nIgnored nodes: comments, script, style\n\u001b[36m<p\u001b[39m\n  \u001b[33mid\u001b[39m=\u001b[32m\"task-title-error\"\u001b[39m\n\u001b[36m>\u001b[39m\n  \u001b[0mTitle is required\u001b[0m\n\u001b[36m</p>\u001b[39m\n\nIgnored nodes: comments, script, style\n\u001b[36m<p\u001b[39m\n  \u001b[33mid\u001b[39m=\u001b[32m\"task-form-error\"\u001b[39m\n\u001b[36m>\u001b[39m\n  \u001b[0mTitle is required\u001b[0m\n\u001b[36m</p>\u001b[39m\n\n(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).\n\nIgnored nodes: comments, script, style\n\u001b[36m<body>\u001b[39m\n  \u001b[36m<div>\u001b[39m\n    \u001b[36m<form>\u001b[39m\n      \u001b[36m<div>\u001b[39m\n        \u001b[36m<label\u001b[39m\n          \u001b[33mfor\u001b[39m=\u001b[32m\"task-title\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[0mTitle\u001b[0m\n        \u001b[36m</label>\u001b[39m\n        \u001b[36m<input\u001b[39m\n          \u001b[33mid\u001b[39m=\u001b[32m\"task-title\"\u001b[39m\n          \u001b[33mplaceholder\u001b[39m=\u001b[32m\"Title\"\u001b[39m\n          \u001b[33mtype\u001b[39m=\u001b[32m\"text\"\u001b[39m\n          \u001b[33mvalue\u001b[39m=\u001b[32m\"\"\u001b[39m\n        \u001b[36m/>\u001b[39m\n        \u001b[36m<p\u001b[39m\n          \u001b[33mid\u001b[39m=\u001b[32m\"task-title-error\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[0mTitle is required\u001b[0m\n        \u001b[36m</p>\u001b[39m\n      \u001b[36m</div>\u001b[39m\n      \u001b[36m<div>\u001b[39m\n        \u001b[36m<label\u001b[39m\n          \u001b[33mfor\u001b[39m=\u001b[32m\"task-description\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[0mDescription\u001b[0m\n        \u001b[36m</label>\u001b[39m\n        \u001b[36m<textarea\u001b[39m\n          \u001b[33mid\u001b[39m=\u001b[32m\"task-description\"\u001b[39m\n          \u001b[33mplaceholder\u001b[39m=\u001b[32m\"Description\"\u001b[39m\n        \u001b[36m/>\u001b[39m\n      \u001b[36m</div>\u001b[39m\n      \u001b[36m<label\u001b[39m\n        \u001b[33mfor\u001b[39m=\u001b[32m\"task-priority\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[0mPriority\u001b[0m\n      \u001b[36m</label>\u001b[39m\n      \u001b[36m<select\u001b[39m\n        \u001b[33mid\u001b[39m=\u001b[32m\"task-priority\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<option\u001b[39m\n          \u001b[33mvalue\u001b[39m=\u001b[32m\"Low\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[0mLow\u001b[0m\n        \u001b[36m</option>\u001b[39m\n        \u001b[36m<option\u001b[39m\n          \u001b[33mvalue\u001b[39m=\u001b[32m\"Medium\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[0mMedium\u001b[0m\n        \u001b[36m</option>\u001b[39m\n        \u001b[36m<option\u001b[39m\n          \u001b[33mvalue\u001b[39m=\u001b[32m\"High\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[0mHigh\u001b[0m\n        \u001b[36m</option>\u001b[39m\n      \u001b[36m</select>\u001b[39m\n      \u001b[36m<label\u001b[39m\n        \u001b[33mfor\u001b[39m=\u001b[32m\"task-category\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[0mCategory\u001b[0m\n      \u001b[36m</label>\u001b[39m\n      \u001b[36m<select\u001b[39m\n        \u001b[33mid\u001b[39m=\u001b[32m\"task-category\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<option\u001b[39m\n          \u001b[33mvalue\u001b[39m=\u001b[32m\"General\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[0mGeneral\u001b[0m\n        \u001b[36m</option>\u001b[39m\n        \u001b[36m<option\u001b[39m\n          \u001b[33mvalue\u001b[39m=\u001b[32m\"Work\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[0mWork\u001b[0m\n        \u001b[36m</option>\u001b[39m\n        \u001b[36m<option\u001b[39m\n          \u001b[33mvalue\u001b[39m=\u001b[32m\"Personal\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[0mPersonal\u001b[0m\n        \u001b[36m</option>\u001b[39m\n      \u001b[36m</select>\u001b[39m\n      \u001b[36m<div>\u001b[39m\n        \u001b[36m<label\u001b[39m\n          \u001b[33mfor\u001b[39m=\u001b[32m\"task-tags\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[0mTags (comma-separated)\u001b[0m\n        \u001b[36m</label>\u001b[39m\n        \u001b[36m<input\u001b[39m\n          \u001b[33mid\u001b[39m=\u001b[32m\"task-tags\"\u001b[39m\n          \u001b[33mplaceholder\u001b[39m=\u001b[32m\"e.g. urgent, frontend, bug\"\u001b[39m\n          \u001b[33mtype\u001b[39m=\u001b[32m\"text\"\u001b[39m\n          \u001b[33mvalue\u001b[39m=\u001b[32m\"\"\u001b[39m\n        \u001b[36m/>\u001b[39m\n      \u001b[36m</div>\u001b[39m\n      \u001b[36m<div>\u001b[39m\n        \u001b[36m<label\u001b[39m\n          \u001b[33mfor\u001b[39m=\u001b[32m\"task-due-date-input\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[0mDue Date\u001b[0m\n        \u001b[36m</label>\u001b[39m\n        \u001b[36m<input\u001b[39m\n          \u001b[33mid\u001b[39m=\u001b[32m\"task-due-date-input\"\u001b[39m\n          \u001b[33mtype\u001b[39m=\u001b[32m\"date\"\u001b[39m\n          \u001b[33mvalue\u001b[39m=\u001b[32m\"\"\u001b[39m\n        \u001b[36m/>\u001b[39m\n      \u001b[36m</div>\u001b[39m\n      \u001b[36m<p\u001b[39m\n        \u001b[33mid\u001b[39m=\u001b[32m\"task-form-error\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[0mTitle is required\u001b[0m\n      \u001b[36m</p>\u001b[39m\n      \u001b[36m<button\u001b[39m\n        \u001b[33mdata-variant\u001b[39m=\u001b[32m\"primary\"\u001b[39m\n        \u001b[33mstyle\u001b[39m=\u001b[32m\"background: rgb(37, 99, 235); color: rgb(255, 255, 255); padding: 6px 12px; border-radius: 6px; cursor: pointer; opacity: 1;\"\u001b[39m\n        \u001b[33mtype\u001b[39m=\u001b[32m\"submit\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[0mAdd Task\u001b[0m\n      \u001b[36m</button>\u001b[39m\n    \u001b[36m</form>\u001b[39m\n  \u001b[36m</div>\u001b[39m\n\u001b[36m</body>\u001b[39m"
               ],
@@ -27589,7 +27589,7 @@
               "fullName": " Challenge 03: Adding New Tasks should clear form after successful add",
               "status": "passed",
               "title": "should clear form after successful add",
-              "duration": 365,
+              "duration": 306,
               "failureMessages": []
             },
             {
@@ -27600,12 +27600,12 @@
               "fullName": " Challenge 03: Adding New Tasks should use controlled inputs (value + onChange)",
               "status": "passed",
               "title": "should use controlled inputs (value + onChange)",
-              "duration": 1,
+              "duration": 2,
               "failureMessages": []
             }
           ],
-          "startTime": 1782145431974,
-          "endTime": 1782145433464,
+          "startTime": 1782199245099,
+          "endTime": 1782199246478,
           "status": "failed",
           "message": "",
           "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-03.test.tsx"
@@ -27620,7 +27620,7 @@
               "fullName": " Challenge 04: Task Completion Toggle TaskCard should render checkbox when onToggle provided",
               "status": "passed",
               "title": "TaskCard should render checkbox when onToggle provided",
-              "duration": 197,
+              "duration": 205,
               "failureMessages": []
             },
             {
@@ -27631,7 +27631,7 @@
               "fullName": " Challenge 04: Task Completion Toggle TaskCard should call onToggle when checkbox clicked",
               "status": "passed",
               "title": "TaskCard should call onToggle when checkbox clicked",
-              "duration": 93,
+              "duration": 101,
               "failureMessages": []
             },
             {
@@ -27642,7 +27642,7 @@
               "fullName": " Challenge 04: Task Completion Toggle TaskCard should show strike-through when completed",
               "status": "passed",
               "title": "TaskCard should show strike-through when completed",
-              "duration": 39,
+              "duration": 70,
               "failureMessages": []
             },
             {
@@ -27653,7 +27653,7 @@
               "fullName": " Challenge 04: Task Completion Toggle TaskCard should have data-completed or different style when completed",
               "status": "passed",
               "title": "TaskCard should have data-completed or different style when completed",
-              "duration": 6,
+              "duration": 11,
               "failureMessages": []
             },
             {
@@ -27664,7 +27664,7 @@
               "fullName": " Challenge 04: Task Completion Toggle TaskList should pass onToggle to TaskCard when tasks provided",
               "status": "passed",
               "title": "TaskList should pass onToggle to TaskCard when tasks provided",
-              "duration": 192,
+              "duration": 95,
               "failureMessages": []
             },
             {
@@ -27675,12 +27675,12 @@
               "fullName": " Challenge 04: Task Completion Toggle count text should show X of Y completed format",
               "status": "passed",
               "title": "count text should show X of Y completed format",
-              "duration": 17,
+              "duration": 9,
               "failureMessages": []
             }
           ],
-          "startTime": 1782145431958,
-          "endTime": 1782145432502,
+          "startTime": 1782199245096,
+          "endTime": 1782199245587,
           "status": "passed",
           "message": "",
           "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-04.test.tsx"
@@ -27695,7 +27695,7 @@
               "fullName": " Challenge 05: Task Deletion TaskCard should render Delete button when onDelete and id provided",
               "status": "passed",
               "title": "TaskCard should render Delete button when onDelete and id provided",
-              "duration": 219,
+              "duration": 298,
               "failureMessages": []
             },
             {
@@ -27717,7 +27717,7 @@
               "fullName": " Challenge 05: Task Deletion TaskCard should call onDelete when Delete clicked and user confirms",
               "status": "passed",
               "title": "TaskCard should call onDelete when Delete clicked and user confirms",
-              "duration": 88,
+              "duration": 96,
               "failureMessages": []
             },
             {
@@ -27728,7 +27728,7 @@
               "fullName": " Challenge 05: Task Deletion TaskCard should not call onDelete when user cancels confirmation",
               "status": "passed",
               "title": "TaskCard should not call onDelete when user cancels confirmation",
-              "duration": 59,
+              "duration": 94,
               "failureMessages": []
             },
             {
@@ -27739,7 +27739,7 @@
               "fullName": " Challenge 05: Task Deletion TaskList should pass onDelete to TaskCard when provided",
               "status": "passed",
               "title": "TaskList should pass onDelete to TaskCard when provided",
-              "duration": 95,
+              "duration": 80,
               "failureMessages": []
             },
             {
@@ -27750,12 +27750,12 @@
               "fullName": " Challenge 05: Task Deletion TaskList should show countText in #task-count",
               "status": "passed",
               "title": "TaskList should show countText in #task-count",
-              "duration": 7,
+              "duration": 10,
               "failureMessages": []
             }
           ],
-          "startTime": 1782145431968,
-          "endTime": 1782145432443,
+          "startTime": 1782199245098,
+          "endTime": 1782199245682,
           "status": "passed",
           "message": "",
           "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-05.test.tsx"
@@ -27770,7 +27770,7 @@
               "fullName": " Challenge 06: Task Filtering FilterBar should render All, Active, Completed buttons",
               "status": "passed",
               "title": "FilterBar should render All, Active, Completed buttons",
-              "duration": 298,
+              "duration": 261,
               "failureMessages": []
             },
             {
@@ -27781,7 +27781,7 @@
               "fullName": " Challenge 06: Task Filtering FilterBar should have id=\"filter-bar\"",
               "status": "passed",
               "title": "FilterBar should have id=\"filter-bar\"",
-              "duration": 20,
+              "duration": 17,
               "failureMessages": []
             },
             {
@@ -27792,7 +27792,7 @@
               "fullName": " Challenge 06: Task Filtering FilterBar should highlight active filter",
               "status": "passed",
               "title": "FilterBar should highlight active filter",
-              "duration": 93,
+              "duration": 74,
               "failureMessages": []
             },
             {
@@ -27803,7 +27803,7 @@
               "fullName": " Challenge 06: Task Filtering FilterBar should call onFilterChange when button clicked",
               "status": "passed",
               "title": "FilterBar should call onFilterChange when button clicked",
-              "duration": 141,
+              "duration": 116,
               "failureMessages": []
             },
             {
@@ -27814,12 +27814,12 @@
               "fullName": " Challenge 06: Task Filtering TaskList with filtered tasks should show only matching tasks",
               "status": "passed",
               "title": "TaskList with filtered tasks should show only matching tasks",
-              "duration": 23,
+              "duration": 17,
               "failureMessages": []
             }
           ],
-          "startTime": 1782145431967,
-          "endTime": 1782145432542,
+          "startTime": 1782199245108,
+          "endTime": 1782199245593,
           "status": "passed",
           "message": "",
           "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-06.test.tsx"
@@ -27834,7 +27834,7 @@
               "fullName": " Challenge 07: Priority-Based Sorting FilterBar or sort control should exist",
               "status": "passed",
               "title": "FilterBar or sort control should exist",
-              "duration": 95,
+              "duration": 80,
               "failureMessages": []
             },
             {
@@ -27845,7 +27845,7 @@
               "fullName": " Challenge 07: Priority-Based Sorting TaskList should render tasks in order provided",
               "status": "passed",
               "title": "TaskList should render tasks in order provided",
-              "duration": 270,
+              "duration": 203,
               "failureMessages": []
             },
             {
@@ -27856,12 +27856,12 @@
               "fullName": " Challenge 07: Priority-Based Sorting When tasks sorted High to Low, High appears first",
               "status": "passed",
               "title": "When tasks sorted High to Low, High appears first",
-              "duration": 189,
+              "duration": 102,
               "failureMessages": []
             }
           ],
-          "startTime": 1782145431447,
-          "endTime": 1782145432002,
+          "startTime": 1782199244571,
+          "endTime": 1782199244956,
           "status": "passed",
           "message": "",
           "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-07.test.tsx"
@@ -27876,7 +27876,7 @@
               "fullName": " Challenge 08: Task Editing TaskCard should render title and description",
               "status": "passed",
               "title": "TaskCard should render title and description",
-              "duration": 62,
+              "duration": 68,
               "failureMessages": []
             },
             {
@@ -27887,7 +27887,7 @@
               "fullName": " Challenge 08: Task Editing TaskList should pass tasks to TaskCard",
               "status": "passed",
               "title": "TaskList should pass tasks to TaskCard",
-              "duration": 28,
+              "duration": 21,
               "failureMessages": []
             },
             {
@@ -27898,12 +27898,12 @@
               "fullName": " Challenge 08: Task Editing TaskList should have id=\"task-list\"",
               "status": "passed",
               "title": "TaskList should have id=\"task-list\"",
-              "duration": 6,
+              "duration": 5,
               "failureMessages": []
             }
           ],
-          "startTime": 1782145435016,
-          "endTime": 1782145435112,
+          "startTime": 1782199248065,
+          "endTime": 1782199248159,
           "status": "passed",
           "message": "",
           "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-08.test.tsx"
@@ -27918,7 +27918,7 @@
               "fullName": " Challenge 09: Search Functionality FilterBar should exist for search integration",
               "status": "passed",
               "title": "FilterBar should exist for search integration",
-              "duration": 155,
+              "duration": 67,
               "failureMessages": []
             },
             {
@@ -27929,12 +27929,12 @@
               "fullName": " Challenge 09: Search Functionality TaskList should filter by provided tasks (search applied upstream)",
               "status": "passed",
               "title": "TaskList should filter by provided tasks (search applied upstream)",
-              "duration": 49,
+              "duration": 28,
               "failureMessages": []
             }
           ],
-          "startTime": 1782145435369,
-          "endTime": 1782145435573,
+          "startTime": 1782199248026,
+          "endTime": 1782199248122,
           "status": "passed",
           "message": "",
           "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-09.test.tsx"
@@ -27949,7 +27949,7 @@
               "fullName": " Challenge 10: useEffect - Local Storage Persistence App should render without crashing",
               "status": "passed",
               "title": "App should render without crashing",
-              "duration": 203,
+              "duration": 180,
               "failureMessages": []
             },
             {
@@ -27960,12 +27960,12 @@
               "fullName": " Challenge 10: useEffect - Local Storage Persistence App should have routes for challenge 10",
               "status": "passed",
               "title": "App should have routes for challenge 10",
-              "duration": 32,
+              "duration": 21,
               "failureMessages": []
             }
           ],
-          "startTime": 1782145435172,
-          "endTime": 1782145435408,
+          "startTime": 1782199248786,
+          "endTime": 1782199248988,
           "status": "passed",
           "message": "",
           "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-10.test.tsx"
@@ -27980,7 +27980,7 @@
               "fullName": " Challenge 11: useEffect - Debounced Search FilterBar should exist for search/debounce integration",
               "status": "passed",
               "title": "FilterBar should exist for search/debounce integration",
-              "duration": 74,
+              "duration": 67,
               "failureMessages": []
             },
             {
@@ -27991,12 +27991,12 @@
               "fullName": " Challenge 11: useEffect - Debounced Search TaskList should render tasks",
               "status": "passed",
               "title": "TaskList should render tasks",
-              "duration": 13,
+              "duration": 17,
               "failureMessages": []
             }
           ],
-          "startTime": 1782145435894,
-          "endTime": 1782145435981,
+          "startTime": 1782199249009,
+          "endTime": 1782199249093,
           "status": "passed",
           "message": "",
           "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-11.test.tsx"
@@ -28011,7 +28011,7 @@
               "fullName": " Challenge 12: Categories and Tags TaskCard should render title and priority",
               "status": "passed",
               "title": "TaskCard should render title and priority",
-              "duration": 99,
+              "duration": 72,
               "failureMessages": []
             },
             {
@@ -28022,12 +28022,12 @@
               "fullName": " Challenge 12: Categories and Tags TaskList should render tasks with extended shape",
               "status": "passed",
               "title": "TaskList should render tasks with extended shape",
-              "duration": 16,
+              "duration": 22,
               "failureMessages": []
             }
           ],
-          "startTime": 1782145435367,
-          "endTime": 1782145435482,
+          "startTime": 1782199248478,
+          "endTime": 1782199248572,
           "status": "passed",
           "message": "",
           "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-12.test.tsx"
@@ -28042,7 +28042,7 @@
               "fullName": " Challenge 13: Due Dates and Sorting TaskCard should render title",
               "status": "passed",
               "title": "TaskCard should render title",
-              "duration": 71,
+              "duration": 56,
               "failureMessages": []
             },
             {
@@ -28053,12 +28053,12 @@
               "fullName": " Challenge 13: Due Dates and Sorting TaskList should render tasks",
               "status": "passed",
               "title": "TaskList should render tasks",
-              "duration": 9,
+              "duration": 10,
               "failureMessages": []
             }
           ],
-          "startTime": 1782145435731,
-          "endTime": 1782145435811,
+          "startTime": 1782199248887,
+          "endTime": 1782199248953,
           "status": "passed",
           "message": "",
           "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-13.test.tsx"
@@ -28073,7 +28073,7 @@
               "fullName": " Challenge 14: Task Statistics Dashboard StatsPanel should have id=\"stats-panel\"",
               "status": "passed",
               "title": "StatsPanel should have id=\"stats-panel\"",
-              "duration": 40,
+              "duration": 41,
               "failureMessages": []
             },
             {
@@ -28084,7 +28084,7 @@
               "fullName": " Challenge 14: Task Statistics Dashboard StatsPanel should display total and completed",
               "status": "passed",
               "title": "StatsPanel should display total and completed",
-              "duration": 30,
+              "duration": 23,
               "failureMessages": []
             },
             {
@@ -28095,12 +28095,12 @@
               "fullName": " Challenge 14: Task Statistics Dashboard TaskList should render tasks",
               "status": "passed",
               "title": "TaskList should render tasks",
-              "duration": 43,
+              "duration": 12,
               "failureMessages": []
             }
           ],
-          "startTime": 1782145431430,
-          "endTime": 1782145431544,
+          "startTime": 1782199244532,
+          "endTime": 1782199244608,
           "status": "passed",
           "message": "",
           "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-14.test.tsx"
@@ -28115,7 +28115,7 @@
               "fullName": " Challenge 15: Component Organization with Props TaskCard should accept and render props",
               "status": "passed",
               "title": "TaskCard should accept and render props",
-              "duration": 42,
+              "duration": 66,
               "failureMessages": []
             },
             {
@@ -28126,12 +28126,12 @@
               "fullName": " Challenge 15: Component Organization with Props TaskList should render TaskCards with props",
               "status": "passed",
               "title": "TaskList should render TaskCards with props",
-              "duration": 7,
+              "duration": 14,
               "failureMessages": []
             }
           ],
-          "startTime": 1782145435802,
-          "endTime": 1782145435851,
+          "startTime": 1782199248856,
+          "endTime": 1782199248936,
           "status": "passed",
           "message": "",
           "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-15.test.tsx"
@@ -28146,7 +28146,7 @@
               "fullName": " Challenge 16: Context API - Theme Management App should render without crashing",
               "status": "passed",
               "title": "App should render without crashing",
-              "duration": 48,
+              "duration": 56,
               "failureMessages": []
             },
             {
@@ -28157,12 +28157,12 @@
               "fullName": " Challenge 16: Context API - Theme Management App should have main content",
               "status": "passed",
               "title": "App should have main content",
-              "duration": 11,
+              "duration": 13,
               "failureMessages": []
             }
           ],
-          "startTime": 1782145436680,
-          "endTime": 1782145436740,
+          "startTime": 1782199249867,
+          "endTime": 1782199249936,
           "status": "passed",
           "message": "",
           "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-16.test.tsx"
@@ -28177,12 +28177,12 @@
               "fullName": " Challenge 17: Custom Hook - useLocalStorage App should render without crashing",
               "status": "passed",
               "title": "App should render without crashing",
-              "duration": 43,
+              "duration": 58,
               "failureMessages": []
             }
           ],
-          "startTime": 1782145437568,
-          "endTime": 1782145437611,
+          "startTime": 1782199250671,
+          "endTime": 1782199250729,
           "status": "passed",
           "message": "",
           "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-17.test.tsx"
@@ -28197,7 +28197,7 @@
               "fullName": " Challenge 18: useReducer - Complex State Management App should render",
               "status": "passed",
               "title": "App should render",
-              "duration": 63,
+              "duration": 71,
               "failureMessages": []
             },
             {
@@ -28208,12 +28208,12 @@
               "fullName": " Challenge 18: useReducer - Complex State Management TaskList should render tasks",
               "status": "passed",
               "title": "TaskList should render tasks",
-              "duration": 5,
+              "duration": 3,
               "failureMessages": []
             }
           ],
-          "startTime": 1782145436198,
-          "endTime": 1782145436266,
+          "startTime": 1782199249443,
+          "endTime": 1782199249518,
           "status": "passed",
           "message": "",
           "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-18.test.tsx"
@@ -28228,7 +28228,7 @@
               "fullName": " Challenge 19: Performance Optimization TaskCard should render",
               "status": "passed",
               "title": "TaskCard should render",
-              "duration": 26,
+              "duration": 28,
               "failureMessages": []
             },
             {
@@ -28239,12 +28239,12 @@
               "fullName": " Challenge 19: Performance Optimization TaskList should render TaskCards",
               "status": "passed",
               "title": "TaskList should render TaskCards",
-              "duration": 6,
+              "duration": 7,
               "failureMessages": []
             }
           ],
-          "startTime": 1782145436156,
-          "endTime": 1782145436188,
+          "startTime": 1782199249268,
+          "endTime": 1782199249303,
           "status": "passed",
           "message": "",
           "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-19.test.tsx"
@@ -28259,7 +28259,7 @@
               "fullName": " Challenge 20: Error Boundaries and Error Handling ErrorBoundary should render children when no error",
               "status": "passed",
               "title": "ErrorBoundary should render children when no error",
-              "duration": 39,
+              "duration": 32,
               "failureMessages": []
             },
             {
@@ -28270,7 +28270,7 @@
               "fullName": " Challenge 20: Error Boundaries and Error Handling ErrorBoundary should have fallback with id=\"error-boundary-fallback\" when error caught",
               "status": "passed",
               "title": "ErrorBoundary should have fallback with id=\"error-boundary-fallback\" when error caught",
-              "duration": 55,
+              "duration": 40,
               "failureMessages": []
             },
             {
@@ -28281,7 +28281,7 @@
               "fullName": " Challenge 20: Error Boundaries and Error Handling ErrorBoundary should have Retry button with id=\"error-retry\"",
               "status": "passed",
               "title": "ErrorBoundary should have Retry button with id=\"error-retry\"",
-              "duration": 19,
+              "duration": 8,
               "failureMessages": []
             },
             {
@@ -28292,12 +28292,12 @@
               "fullName": " Challenge 20: Error Boundaries and Error Handling Retry button should be clickable",
               "status": "passed",
               "title": "Retry button should be clickable",
-              "duration": 237,
+              "duration": 224,
               "failureMessages": []
             }
           ],
-          "startTime": 1782145431942,
-          "endTime": 1782145432292,
+          "startTime": 1782199245080,
+          "endTime": 1782199245384,
           "status": "passed",
           "message": "",
           "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-20.test.tsx"
@@ -28312,7 +28312,7 @@
               "fullName": " Challenge 21: React Router - Routing and Navigation TaskDetailPage should use useParams and render task detail or not found",
               "status": "passed",
               "title": "TaskDetailPage should use useParams and render task detail or not found",
-              "duration": 45,
+              "duration": 41,
               "failureMessages": []
             },
             {
@@ -28323,12 +28323,12 @@
               "fullName": " Challenge 21: React Router - Routing and Navigation TaskDetailPage should have back button with id task-detail-back",
               "status": "passed",
               "title": "TaskDetailPage should have back button with id task-detail-back",
-              "duration": 8,
+              "duration": 4,
               "failureMessages": []
             }
           ],
-          "startTime": 1782145431443,
-          "endTime": 1782145431496,
+          "startTime": 1782199244554,
+          "endTime": 1782199244599,
           "status": "passed",
           "message": "",
           "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-21.test.tsx"
@@ -28343,7 +28343,7 @@
               "fullName": " Challenge 22: Data Fetching - Loading and Error State FetchDemoView should show loading state initially or fetch from API",
               "status": "passed",
               "title": "FetchDemoView should show loading state initially or fetch from API",
-              "duration": 69,
+              "duration": 61,
               "failureMessages": []
             },
             {
@@ -28354,7 +28354,7 @@
               "fullName": " Challenge 22: Data Fetching - Loading and Error State FetchDemoView should have fetch-list when data is loaded",
               "status": "passed",
               "title": "FetchDemoView should have fetch-list when data is loaded",
-              "duration": 18,
+              "duration": 23,
               "failureMessages": []
             },
             {
@@ -28365,12 +28365,12 @@
               "fullName": " Challenge 22: Data Fetching - Loading and Error State FetchDemoView should show fetch-error when fetch fails",
               "status": "passed",
               "title": "FetchDemoView should show fetch-error when fetch fails",
-              "duration": 17,
+              "duration": 11,
               "failureMessages": []
             }
           ],
-          "startTime": 1782145431391,
-          "endTime": 1782145431495,
+          "startTime": 1782199244500,
+          "endTime": 1782199244596,
           "status": "passed",
           "message": "",
           "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-22.test.tsx"
@@ -28385,7 +28385,7 @@
               "fullName": " Challenge 23: useRef - Focus Management FilterBar should render search input with id search-input",
               "status": "passed",
               "title": "FilterBar should render search input with id search-input",
-              "duration": 96,
+              "duration": 123,
               "failureMessages": []
             },
             {
@@ -28396,12 +28396,12 @@
               "fullName": " Challenge 23: useRef - Focus Management FilterBar should be focusable for search input",
               "status": "passed",
               "title": "FilterBar should be focusable for search input",
-              "duration": 24,
+              "duration": 18,
               "failureMessages": []
             }
           ],
-          "startTime": 1782145435330,
-          "endTime": 1782145435450,
+          "startTime": 1782199248580,
+          "endTime": 1782199248722,
           "status": "passed",
           "message": "",
           "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/01-react-fundamentals/project/tests/challenge-23.test.tsx"
@@ -28510,7 +28510,7 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "failed",
-                          "duration": 1,
+                          "duration": 2,
                           "error": {
                             "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
                             "stack": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
@@ -28523,7 +28523,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-22T16:24:08.016Z",
+                          "startTime": "2026-06-23T07:21:02.157Z",
                           "annotations": [],
                           "attachments": []
                         },
@@ -28544,7 +28544,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 1,
-                          "startTime": "2026-06-22T16:24:09.619Z",
+                          "startTime": "2026-06-23T07:21:03.665Z",
                           "annotations": [],
                           "attachments": [
                             {
@@ -28571,7 +28571,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 2,
-                          "startTime": "2026-06-22T16:24:11.179Z",
+                          "startTime": "2026-06-23T07:21:05.224Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -28600,7 +28600,7 @@
                           "workerIndex": 3,
                           "parallelIndex": 0,
                           "status": "failed",
-                          "duration": 2,
+                          "duration": 1,
                           "error": {
                             "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
                             "stack": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
@@ -28613,7 +28613,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-22T16:24:12.687Z",
+                          "startTime": "2026-06-23T07:21:06.704Z",
                           "annotations": [],
                           "attachments": []
                         },
@@ -28634,7 +28634,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 1,
-                          "startTime": "2026-06-22T16:24:14.195Z",
+                          "startTime": "2026-06-23T07:21:08.202Z",
                           "annotations": [],
                           "attachments": [
                             {
@@ -28648,7 +28648,7 @@
                           "workerIndex": 5,
                           "parallelIndex": 0,
                           "status": "failed",
-                          "duration": 2,
+                          "duration": 1,
                           "error": {
                             "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
                             "stack": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
@@ -28661,7 +28661,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 2,
-                          "startTime": "2026-06-22T16:24:15.725Z",
+                          "startTime": "2026-06-23T07:21:09.772Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -28690,7 +28690,7 @@
                           "workerIndex": 6,
                           "parallelIndex": 0,
                           "status": "failed",
-                          "duration": 1,
+                          "duration": 2,
                           "error": {
                             "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
                             "stack": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1208\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
@@ -28703,7 +28703,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2026-06-22T16:24:17.183Z",
+                          "startTime": "2026-06-23T07:21:11.255Z",
                           "annotations": [],
                           "attachments": []
                         },
@@ -28724,7 +28724,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 1,
-                          "startTime": "2026-06-22T16:24:18.665Z",
+                          "startTime": "2026-06-23T07:21:12.850Z",
                           "annotations": [],
                           "attachments": [
                             {
@@ -28751,7 +28751,7 @@
                           "stdout": [],
                           "stderr": [],
                           "retry": 2,
-                          "startTime": "2026-06-22T16:24:20.307Z",
+                          "startTime": "2026-06-23T07:21:14.345Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -28774,27 +28774,41 @@
     },
     "aiReviewResults": {
       "challengeId": "21-react-router",
-      "timestamp": "2026-06-22T16:24:20.620Z",
-      "score": 0,
+      "timestamp": "2026-06-23T07:21:14.714Z",
+      "score": 88,
       "feedback": [],
-      "strengths": [],
-      "improvements": [],
-      "readability": 0,
-      "maintainability": 0,
-      "overall": "",
-      "error": "Groq API error (413): Request too large for model `llama-3.1-8b-instant` in organization `org_01kt9g65xef5ja3kmbjfp9qtme` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Requested 6488, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript and functional components makes the code more maintainable and easier to read.",
+        "The code includes proper error handling and validation."
+      ],
+      "improvements": [
+        "Some of the functions are quite long and complex. Consider breaking them down into smaller, more manageable functions.",
+        "There are some repeated code patterns, such as the use of `useCallback` and `useMemo`. Consider extracting these into separate functions or hooks.",
+        "The code could benefit from more comments and documentation. Consider adding JSDoc comments to explain the purpose and behavior of each function and component."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and maintainable, but could benefit from some improvements to readability and organization. With some additional comments and refactoring, this code could be even more efficient and easier to understand."
     },
     "aiResults": {
       "challengeId": "21-react-router",
-      "timestamp": "2026-06-22T16:24:20.620Z",
-      "score": 0,
+      "timestamp": "2026-06-23T07:21:14.714Z",
+      "score": 88,
       "feedback": [],
-      "strengths": [],
-      "improvements": [],
-      "readability": 0,
-      "maintainability": 0,
-      "overall": "",
-      "error": "Groq API error (413): Request too large for model `llama-3.1-8b-instant` in organization `org_01kt9g65xef5ja3kmbjfp9qtme` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Requested 6488, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing"
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript and functional components makes the code more maintainable and easier to read.",
+        "The code includes proper error handling and validation."
+      ],
+      "improvements": [
+        "Some of the functions are quite long and complex. Consider breaking them down into smaller, more manageable functions.",
+        "There are some repeated code patterns, such as the use of `useCallback` and `useMemo`. Consider extracting these into separate functions or hooks.",
+        "The code could benefit from more comments and documentation. Consider adding JSDoc comments to explain the purpose and behavior of each function and component."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-structured and maintainable, but could benefit from some improvements to readability and organization. With some additional comments and refactoring, this code could be even more efficient and easier to understand."
     }
   },
   {
