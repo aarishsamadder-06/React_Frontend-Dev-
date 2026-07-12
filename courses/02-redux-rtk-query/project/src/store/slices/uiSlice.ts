@@ -1,27 +1,22 @@
-import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 
 interface UIState {
-  isLoading: boolean
-  modalOpen: boolean
+  sidebarOpen: boolean
 }
 
 const initialState: UIState = {
-  isLoading: false,
-  modalOpen: false,
+  sidebarOpen: false,
 }
 
 const uiSlice = createSlice({
   name: 'ui',
   initialState,
   reducers: {
-    setLoading(state, action: PayloadAction<boolean>) {
-      state.isLoading = action.payload
-    },
-    setModalOpen(state, action: PayloadAction<boolean>) {
-      state.modalOpen = action.payload
+    toggleSidebar(state) {
+      state.sidebarOpen = !state.sidebarOpen
     },
   },
 })
 
-export const { setLoading, setModalOpen } = uiSlice.actions
+export const { toggleSidebar } = uiSlice.actions
 export default uiSlice.reducer

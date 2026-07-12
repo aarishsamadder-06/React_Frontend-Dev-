@@ -1,27 +1,20 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-
-interface User {
-  id: number
-  name: string
-  email: string
-}
+import { mockApi } from '../../api/mockServer'
+import type { User } from '../../api/mockServer'
 
 interface UsersState {
-  users: User[]
-  status: 'idle' | 'loading' | 'succeeded' | 'failed'
+  list: User[]
+  loading: boolean
   error: string | null
 }
 
 const initialState: UsersState = {
-  users: [],
-  status: 'idle',
+  list: [],
+  loading: false,
   error: null,
 }
 
-export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
-  const response = await fetch('https://jsonplaceholder.typicode.com/users')
-  return response.json()
-})
+export const fetchUsers = createAsyncThunk('users/fetchUsers', () => mockApi.getUsers())
 
 const usersSlice = createSlice({
   name: 'users',
@@ -30,14 +23,15 @@ const usersSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchUsers.pending, (state) => {
-        state.status = 'loading'
+        state.loading = true
+        state.error = null
       })
       .addCase(fetchUsers.fulfilled, (state, action) => {
-        state.status = 'succeeded'
-        state.users = action.payload
+        state.loading = false
+        state.list = action.payload
       })
       .addCase(fetchUsers.rejected, (state, action) => {
-        state.status = 'failed'
+        state.loading = false
         state.error = action.error.message ?? 'Failed to fetch'
       })
   },
