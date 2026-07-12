@@ -3,14 +3,11 @@ import { join } from 'path';
 import { parse } from '@babel/parser';
 import traverse from '@babel/traverse';
 
-/**
- * File-specific pattern rules
- */
 function getFileSpecificPatterns(file) {
   if (file.includes("api/usersApi")) {
     return ["createApi", "fetchBaseQuery", "endpoints"];
   }
-  if (file.includes("store")) {
+  if (file.includes("store/store") || file.endsWith("store.ts")) {
     return ["reducer", "middleware"];
   }
   if (file.includes("UsersList")) {
@@ -22,9 +19,6 @@ function getFileSpecificPatterns(file) {
   return [];
 }
 
-/**
- * Main checker
- */
 export async function checkArchitecture(challengeMetadata, projectDir) {
   const filesToCheck = challengeMetadata.filesToCheck || [];
 
@@ -73,7 +67,6 @@ export async function checkArchitecture(challengeMetadata, projectDir) {
     });
   }
 
-  // final score
   results.score = totalChecks > 0
     ? Math.round((passedChecks / totalChecks) * 100 * 10) / 10
     : 100;
@@ -83,9 +76,6 @@ export async function checkArchitecture(challengeMetadata, projectDir) {
   return results;
 }
 
-/**
- * AST + fallback checker
- */
 function checkFileForPatterns(content, patternsRequired) {
   const patternsFound = [];
   const patternsMissing = [];
@@ -173,7 +163,6 @@ function checkFileForPatterns(content, patternsRequired) {
       }
     });
 
-    // match required patterns
     for (const pattern of patternsRequired) {
       if (foundPatterns.has(pattern) || content.includes(pattern)) {
         patternsFound.push(pattern);
@@ -183,7 +172,6 @@ function checkFileForPatterns(content, patternsRequired) {
     }
 
   } catch (error) {
-    // fallback: string matching
     for (const pattern of patternsRequired) {
       if (content.includes(pattern)) {
         patternsFound.push(pattern);

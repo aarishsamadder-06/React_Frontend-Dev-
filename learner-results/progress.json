@@ -1,13 +1,13 @@
 {
-  "lastUpdated": "2026-07-12T11:45:12.719Z",
+  "lastUpdated": "2026-07-12T12:29:21.062Z",
   "pathway": {
     "name": "Modern React Engineer",
     "version": "1.0.0",
-    "overallScore": 54.4,
-    "completionPercentage": 45.3,
+    "overallScore": 54.2,
+    "completionPercentage": 49.1,
     "badgeLevel": "none",
     "totalChallenges": 53,
-    "completedChallenges": 24
+    "completedChallenges": 26
   },
   "courses": {
     "01-react-fundamentals": {
@@ -369,11 +369,11 @@
     "02-redux-rtk-query": {
       "courseId": "02-redux-rtk-query",
       "courseName": "Redux & RTK Query",
-      "averageScore": 82.9,
-      "completionPercentage": 7.7,
+      "averageScore": 82.3,
+      "completionPercentage": 23.1,
       "badgeLevel": "none",
       "totalChallenges": 13,
-      "completedChallenges": 1,
+      "completedChallenges": 3,
       "challenges": {
         "01-store-setup": {
           "challengeId": "01-store-setup",
@@ -381,6 +381,36 @@
           "passed": true,
           "score": 82.9,
           "lastRun": "2026-07-12T11:44:31.547Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 100,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 0,
+            "aiReview": 86
+          }
+        },
+        "02-first-slice": {
+          "challengeId": "02-first-slice",
+          "challengeName": "First Slice with createSlice",
+          "passed": true,
+          "score": 81.15,
+          "lastRun": "2026-07-12T12:00:43.611Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 100,
+            "architecture": 75,
+            "bestPractices": 100,
+            "e2eTests": 0,
+            "aiReview": 91
+          }
+        },
+        "03-reading-dispatching": {
+          "challengeId": "03-reading-dispatching",
+          "challengeName": "Reading and Dispatching in Components",
+          "passed": true,
+          "score": 82.9,
+          "lastRun": "2026-07-12T12:28:47.185Z",
           "scores": {
             "functionalTests": 100,
             "codeQuality": 100,
