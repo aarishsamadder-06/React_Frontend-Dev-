@@ -1,23 +1,9 @@
 #!/usr/bin/env node
 
-/**
- * AI Review Layer for RTK Query Course
- * 
- * Uses Groq API (Llama 3.1 8B) to provide qualitative code review
- * 
- * IMPORTANT: This review only runs if functional tests pass.
- * It receives:
- * - Challenge instructions and requirements (README.md - merged file)
- * - All user-created code files
- * 
- * Provides sophisticated feedback based on actual implementation vs requirements.
- */
-
 import { readFileSync, existsSync, readdirSync, statSync } from 'fs';
 import { join, dirname, extname } from 'path';
 import { fileURLToPath } from 'url';
 
-// Load .env from repo root if it exists
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const repoRoot = join(__dirname, '..', '..', '..');
@@ -37,15 +23,8 @@ const GROQ_API_KEY = process.env.GROQ_API_KEY || '';
 const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
 const MODEL = 'llama-3.1-8b-instant';
 
-// File extensions to include in code review
 const CODE_EXTENSIONS = ['.ts', '.tsx', '.js', '.jsx'];
 
-/**
- * Reviews code using AI for qualitative feedback
- * @param {string} challengeId - Challenge ID
- * @param {object} challengeMetadata - Challenge metadata (includes filesToCheck, patternsRequired, etc.)
- * @param {string} projectDir - Project directory path
- */
 export async function reviewCodeWithAI(challengeId, challengeMetadata, projectDir) {
   const results = {
     challengeId,
@@ -60,40 +39,35 @@ export async function reviewCodeWithAI(challengeId, challengeMetadata, projectDi
   };
 
   try {
-    // 1. Load challenge instructions and requirements from README.md (merged file)
     const challengeDir = join(projectDir, 'challenges', challengeId);
     const readmePath = join(challengeDir, 'README.md');
-    
+
     let challengeInstructions = '';
     let challengeRequirements = '';
 
     if (existsSync(readmePath)) {
       const readmeContent = readFileSync(readmePath, 'utf-8');
-      // Split README into instructions (before Technical Requirements) and requirements (after)
       const requirementsMatch = readmeContent.match(/## Technical Requirements(?: \(What Will Be Reviewed\))?/);
       if (requirementsMatch) {
         const splitIndex = requirementsMatch.index;
-        challengeInstructions = readmeContent.substring(0, splitIndex);
-        challengeRequirements = readmeContent.substring(splitIndex);
+        challengeInstructions = readmeContent.substring(0, splitIndex).substring(0, 500);
+        challengeRequirements = readmeContent.substring(splitIndex).substring(0, 500);
       } else {
-        // If no Technical Requirements section, use entire README as instructions
-        challengeInstructions = readmeContent;
+        challengeInstructions = readmeContent.substring(0, 500);
       }
     }
 
-    // 2. Read all user-created code files
     const codeFiles = [];
     const missingFiles = [];
-    
+
     for (const filePath of challengeMetadata.filesToCheck || []) {
       const fullPath = join(projectDir, filePath);
       if (existsSync(fullPath)) {
         const content = readFileSync(fullPath, 'utf-8');
-        // Only include if it's a code file and has meaningful content
         if (CODE_EXTENSIONS.includes(extname(fullPath)) && content.trim().length > 0) {
           codeFiles.push({
             file: filePath,
-            content: content.substring(0, 8000) // Limit to 8KB per file
+            content: content.substring(0, 2000)
           });
         }
       } else {
@@ -101,10 +75,8 @@ export async function reviewCodeWithAI(challengeId, challengeMetadata, projectDi
       }
     }
 
-    // 3. Discover additional files user might have created in relevant directories
     const additionalFiles = discoverAdditionalFiles(challengeMetadata, projectDir);
     for (const file of additionalFiles) {
-      // Avoid duplicates
       if (!codeFiles.some(f => f.file === file.file)) {
         codeFiles.push(file);
       }
@@ -118,7 +90,6 @@ export async function reviewCodeWithAI(challengeId, challengeMetadata, projectDi
       };
     }
 
-    // 4. Check if API key is available
     if (!GROQ_API_KEY) {
       return {
         ...results,
@@ -127,7 +98,6 @@ export async function reviewCodeWithAI(challengeId, challengeMetadata, projectDi
       };
     }
 
-    // 5. Build sophisticated prompt with all context
     const prompt = buildReviewPrompt(
       challengeId,
       challengeMetadata,
@@ -137,10 +107,7 @@ export async function reviewCodeWithAI(challengeId, challengeMetadata, projectDi
       missingFiles
     );
 
-    // 6. Call Groq API
     const aiResponse = await callGroqAPI(prompt);
-
-    // 7. Parse response
     const parsedResponse = parseAIResponse(aiResponse);
 
     return {
@@ -158,14 +125,10 @@ export async function reviewCodeWithAI(challengeId, challengeMetadata, projectDi
   }
 }
 
-/**
- * Discover additional files user might have created
- */
 function discoverAdditionalFiles(challengeMetadata, projectDir) {
   const additionalFiles = [];
   const checkedDirs = new Set();
 
-  // Check directories mentioned in filesToCheck
   for (const filePath of challengeMetadata.filesToCheck || []) {
     const dir = dirname(filePath);
     if (!checkedDirs.has(dir)) {
@@ -178,25 +141,20 @@ function discoverAdditionalFiles(challengeMetadata, projectDir) {
             const fullPath = join(fullDir, file);
             if (statSync(fullPath).isFile() && CODE_EXTENSIONS.includes(extname(file))) {
               const relativePath = join(dir, file).replace(/\\/g, '/');
-              // Only include if not already in filesToCheck
               if (!challengeMetadata.filesToCheck.includes(relativePath)) {
                 try {
                   const content = readFileSync(fullPath, 'utf-8');
                   if (content.trim().length > 0) {
                     additionalFiles.push({
                       file: relativePath,
-                      content: content.substring(0, 8000)
+                      content: content.substring(0, 2000)
                     });
                   }
-                } catch (e) {
-                  // Skip files that can't be read
-                }
+                } catch (e) {}
               }
             }
           }
-        } catch (e) {
-          // Skip directories that can't be read
-        }
+        } catch (e) {}
       }
     }
   }
@@ -204,91 +162,49 @@ function discoverAdditionalFiles(challengeMetadata, projectDir) {
   return additionalFiles;
 }
 
-/**
- * Build sophisticated review prompt with all context
- */
 function buildReviewPrompt(challengeId, challengeMetadata, instructions, requirements, codeFiles, missingFiles) {
   const challengeName = challengeMetadata.challengeName || challengeId;
   const skills = challengeMetadata.skills || [];
   const patternsRequired = challengeMetadata.patternsRequired || [];
 
-  // Build code context
-  const codeContext = codeFiles.map(f => 
+  const codeContext = codeFiles.map(f =>
     `File: ${f.file}\n\`\`\`typescript\n${f.content}\n\`\`\``
   ).join('\n\n---\n\n');
 
-  // Build missing files note
   const missingFilesNote = missingFiles.length > 0
-    ? `\n\n⚠️ NOTE: The following expected files are missing: ${missingFiles.join(', ')}. This may indicate incomplete implementation.`
+    ? `\n\n⚠️ NOTE: The following expected files are missing: ${missingFiles.join(', ')}.`
     : '';
 
-  // Build requirements summary
   const requirementsSummary = requirements
-    ? `\n\n## Technical Requirements:\n${requirements.substring(0, 2000)}`
+    ? `\n\n## Technical Requirements:\n${requirements.substring(0, 500)}`
     : '';
 
-  // Build instructions summary
   const instructionsSummary = instructions
-    ? `\n\n## Challenge Instructions:\n${instructions.substring(0, 3000)}`
+    ? `\n\n## Challenge Instructions:\n${instructions.substring(0, 500)}`
     : '';
 
-  return `You are an expert RTK Query, Redux Toolkit, and TypeScript code reviewer. Review the following implementation for challenge "${challengeName}" (${challengeId}).
+  return `You are an expert RTK Query, Redux Toolkit, and TypeScript code reviewer. Review the implementation for challenge "${challengeName}" (${challengeId}).
 
 ## Challenge Context:
-- **Challenge ID**: ${challengeId}
 - **Skills Focus**: ${skills.join(', ')}
 - **Required Patterns**: ${patternsRequired.join(', ')}${instructionsSummary}${requirementsSummary}
 
 ## User's Implementation:
 
-The following code files were created/modified by the user for this challenge:
-
 ${codeContext}${missingFilesNote}
 
-## Review Task:
-
-Provide a comprehensive code review focusing on:
-
-1. **Requirement Compliance** (30%):
-   - Does the code meet all functional requirements?
-   - Are all required patterns implemented correctly?
-   - Are missing files a concern?
-
-2. **Code Quality** (25%):
-   - Readability: Is the code clear and well-structured?
-   - TypeScript usage: Proper types and interfaces?
-   - Code organization: Logical structure and separation of concerns?
-
-3. **RTK Query Best Practices** (25%):
-   - Correct use of createApi, fetchBaseQuery, endpoints
-   - Proper hook usage (useGetUsersQuery, etc.)
-   - Store integration and reducer setup
-   - Error and loading state handling
-
-4. **Maintainability** (20%):
-   - Is the code maintainable and extensible?
-   - Are there any code smells or anti-patterns?
-   - Could the code be improved for future changes?
-
-## Output Format:
-
-Provide your review as JSON:
+## Output Format (JSON only):
 
 {
   "readability": <number 0-100>,
   "maintainability": <number 0-100>,
-  "strengths": ["specific strength 1", "specific strength 2", "specific strength 3"],
-  "improvements": ["specific improvement 1 with file reference", "specific improvement 2 with file reference", "specific improvement 3 with file reference"],
-  "overall": "<2-3 sentence assessment focusing on requirement compliance and RTK Query best practices>",
-  "requirementCompliance": <number 0-100, how well requirements are met>
+  "strengths": ["strength 1", "strength 2", "strength 3"],
+  "improvements": ["improvement 1", "improvement 2", "improvement 3"],
+  "overall": "<2-3 sentence assessment>",
+  "requirementCompliance": <number 0-100>
+}`;
 }
 
-Be specific in your feedback. Reference specific files and code patterns. Focus on actionable improvements.`;
-}
-
-/**
- * Call Groq API
- */
 async function callGroqAPI(prompt) {
   const response = await fetch(GROQ_API_URL, {
     method: 'POST',
@@ -301,7 +217,7 @@ async function callGroqAPI(prompt) {
       messages: [
         {
           role: 'system',
-          content: 'You are an expert RTK Query, Redux Toolkit, and TypeScript code reviewer. Provide detailed, specific, actionable feedback. Reference specific files and code patterns in your feedback.'
+          content: 'You are an expert RTK Query, Redux Toolkit, and TypeScript code reviewer. Respond only with valid JSON.'
         },
         {
           role: 'user',
@@ -309,7 +225,7 @@ async function callGroqAPI(prompt) {
         }
       ],
       temperature: 0.3,
-      max_tokens: 1500 // Increased for more detailed feedback
+      max_tokens: 800
     })
   });
 
@@ -327,12 +243,8 @@ async function callGroqAPI(prompt) {
   return content;
 }
 
-/**
- * Parse AI response
- */
 function parseAIResponse(response) {
   try {
-    // Try to extract JSON from response
     const jsonMatch = response.match(/\{[\s\S]*\}/);
     if (jsonMatch) {
       const parsed = JSON.parse(jsonMatch[0]);
@@ -345,11 +257,8 @@ function parseAIResponse(response) {
         requirementCompliance: parsed.requirementCompliance || 0
       };
     }
-  } catch (error) {
-    // Fallback parsing
-  }
+  } catch (error) {}
 
-  // Fallback: extract information manually
   const readabilityMatch = response.match(/readability[:\s]+(\d+)/i);
   const maintainabilityMatch = response.match(/maintainability[:\s]+(\d+)/i);
   const complianceMatch = response.match(/requirementCompliance[:\s]+(\d+)/i);
@@ -364,9 +273,6 @@ function parseAIResponse(response) {
   };
 }
 
-/**
- * Extract list items from text
- */
 function extractList(text, keyword) {
   const lines = text.split('\n');
   const list = [];
@@ -385,7 +291,7 @@ function extractList(text, keyword) {
       let item = line.trim().replace(/^[-•\d."]+\s*/, '').replace(/^["']|["']$/g, '');
       if (item) {
         list.push(item);
-        if (list.length >= 5) break; // Allow up to 5 items
+        if (list.length >= 5) break;
       }
     }
     if (inList && line.trim() === '' && list.length > 0) {
@@ -396,21 +302,16 @@ function extractList(text, keyword) {
   return list.length > 0 ? list : [];
 }
 
-/**
- * Calculate AI score based on multiple factors
- */
 function calculateAIScore(parsedResponse) {
   const readability = parsedResponse.readability || 0;
   const maintainability = parsedResponse.maintainability || 0;
   const requirementCompliance = parsedResponse.requirementCompliance || 0;
 
-  // Weighted average: requirement compliance is most important
-  // Since tests already passed, we focus on code quality
   const score = Math.round(
     (requirementCompliance * 0.4) +
     (readability * 0.3) +
     (maintainability * 0.3)
   );
 
-  return Math.max(0, Math.min(100, score)); // Clamp between 0-100
+  return Math.max(0, Math.min(100, score));
 }

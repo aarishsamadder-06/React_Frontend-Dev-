@@ -3,6 +3,12 @@ import { join } from 'path';
 import { parse } from '@babel/parser';
 import traverse from '@babel/traverse';
 
+const PATTERN_ALIASES = {
+  'useQueryHook': /use\w+Query/,
+  'useMutationHook': /use\w+Mutation/,
+  'optimisticUpdate': /updateQueryData|onQueryStarted/,
+}
+
 function getFileSpecificPatterns(file) {
   if (file.includes("api/usersApi")) {
     return ["createApi", "fetchBaseQuery", "endpoints"];
@@ -127,33 +133,13 @@ function checkFileForPatterns(content, patternsRequired) {
       ObjectProperty(path) {
         const key = path.node.key?.name;
 
-        if (key === 'endpoints') {
-          foundPatterns.add('endpoints');
-        }
-
-        if (key === 'providesTags') {
-          foundPatterns.add('providesTags');
-        }
-
-        if (key === 'invalidatesTags') {
-          foundPatterns.add('invalidatesTags');
-        }
-
-        if (key === 'tagTypes') {
-          foundPatterns.add('tagTypes');
-        }
-
-        if (key === 'onQueryStarted') {
-          foundPatterns.add('onQueryStarted');
-        }
-
-        if (key === 'reducer') {
-          foundPatterns.add('reducer');
-        }
-
-        if (key === 'middleware') {
-          foundPatterns.add('middleware');
-        }
+        if (key === 'endpoints') foundPatterns.add('endpoints');
+        if (key === 'providesTags') foundPatterns.add('providesTags');
+        if (key === 'invalidatesTags') foundPatterns.add('invalidatesTags');
+        if (key === 'tagTypes') foundPatterns.add('tagTypes');
+        if (key === 'onQueryStarted') foundPatterns.add('onQueryStarted');
+        if (key === 'reducer') foundPatterns.add('reducer');
+        if (key === 'middleware') foundPatterns.add('middleware');
       },
 
       ObjectMethod(path) {
@@ -164,7 +150,8 @@ function checkFileForPatterns(content, patternsRequired) {
     });
 
     for (const pattern of patternsRequired) {
-      if (foundPatterns.has(pattern) || content.includes(pattern)) {
+      const alias = PATTERN_ALIASES[pattern];
+      if (foundPatterns.has(pattern) || content.includes(pattern) || (alias && alias.test(content))) {
         patternsFound.push(pattern);
       } else {
         patternsMissing.push(pattern);
@@ -173,7 +160,8 @@ function checkFileForPatterns(content, patternsRequired) {
 
   } catch (error) {
     for (const pattern of patternsRequired) {
-      if (content.includes(pattern)) {
+      const alias = PATTERN_ALIASES[pattern];
+      if (content.includes(pattern) || (alias && alias.test(content))) {
         patternsFound.push(pattern);
       } else {
         patternsMissing.push(pattern);

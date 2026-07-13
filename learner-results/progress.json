@@ -1,13 +1,13 @@
 {
-  "lastUpdated": "2026-07-12T12:45:09.347Z",
+  "lastUpdated": "2026-07-12T14:21:42.263Z",
   "pathway": {
     "name": "Modern React Engineer",
     "version": "1.0.0",
-    "overallScore": 53.1,
-    "completionPercentage": 54.7,
+    "overallScore": 54.4,
+    "completionPercentage": 62.3,
     "badgeLevel": "none",
     "totalChallenges": 53,
-    "completedChallenges": 29
+    "completedChallenges": 33
   },
   "courses": {
     "01-react-fundamentals": {
@@ -369,11 +369,11 @@
     "02-redux-rtk-query": {
       "courseId": "02-redux-rtk-query",
       "courseName": "Redux & RTK Query",
-      "averageScore": 79,
-      "completionPercentage": 46.2,
-      "badgeLevel": "none",
+      "averageScore": 82.9,
+      "completionPercentage": 76.9,
+      "badgeLevel": "silver",
       "totalChallenges": 13,
-      "completedChallenges": 6,
+      "completedChallenges": 10,
       "challenges": {
         "01-store-setup": {
           "challengeId": "01-store-setup",
@@ -468,16 +468,61 @@
         "07-queries": {
           "challengeId": "07-queries",
           "challengeName": "Query Endpoints and useQuery Hooks",
-          "passed": false,
-          "score": 57.165,
-          "lastRun": "2026-07-12T12:44:43.677Z",
+          "passed": true,
+          "score": 83.65,
+          "lastRun": "2026-07-12T14:13:18.293Z",
           "scores": {
-            "functionalTests": 91.9,
+            "functionalTests": 100,
             "codeQuality": 100,
-            "architecture": 0,
+            "architecture": 100,
             "bestPractices": 100,
             "e2eTests": 0,
-            "aiReview": 0
+            "aiReview": 91
+          }
+        },
+        "08-caching-refetch": {
+          "challengeId": "08-caching-refetch",
+          "challengeName": "Caching and Cache Tags",
+          "passed": true,
+          "score": 83.65,
+          "lastRun": "2026-07-12T14:16:30.655Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 100,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 0,
+            "aiReview": 91
+          }
+        },
+        "09-mutations": {
+          "challengeId": "09-mutations",
+          "challengeName": "Mutations with useMutation",
+          "passed": true,
+          "score": 83.65,
+          "lastRun": "2026-07-12T14:18:50.436Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 100,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 0,
+            "aiReview": 91
+          }
+        },
+        "10-optimistic-updates": {
+          "challengeId": "10-optimistic-updates",
+          "challengeName": "Optimistic Updates",
+          "passed": true,
+          "score": 82.9,
+          "lastRun": "2026-07-12T14:21:22.058Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 100,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 0,
+            "aiReview": 86
           }
         }
       }
