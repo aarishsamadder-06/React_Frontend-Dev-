@@ -242,5 +242,77 @@
       "overall": "The code implements optimistic updates using RTK Query, but can be improved with more comments and a more explicit undo method.",
       "requirementCompliance": 90
     }
+  },
+  {
+    "challengeId": "11-api-local-state",
+    "challengeName": "API and Local State Together",
+    "aiReview": {
+      "challengeId": "11-api-local-state",
+      "timestamp": "2026-07-13T16:58:15.480Z",
+      "score": 91,
+      "feedback": [],
+      "strengths": [
+        "Effective use of RTK Query and Redux Toolkit for state management",
+        "Clear separation of concerns between API and local state",
+        "Well-structured code with clear naming conventions"
+      ],
+      "improvements": [
+        "Consider adding more error handling for API requests",
+        "Some variable names could be more descriptive",
+        "Type annotations could be more consistent throughout the code"
+      ],
+      "readability": 90,
+      "maintainability": 85,
+      "overall": "The code is well-structured and effectively uses RTK Query and Redux Toolkit for state management. However, there are some areas for improvement, such as adding more error handling and improving variable naming conventions.",
+      "requirementCompliance": 95
+    }
+  },
+  {
+    "challengeId": "12-error-loading-ux",
+    "challengeName": "Error and Loading UX",
+    "aiReview": {
+      "challengeId": "12-error-loading-ux",
+      "timestamp": "2026-07-13T17:02:46.462Z",
+      "score": 95,
+      "feedback": [],
+      "strengths": [
+        "Proper use of RTK Query hooks for loading and error states.",
+        "Clear and concise code structure.",
+        "ErrorDisplay component is reusable and well-implemented."
+      ],
+      "improvements": [
+        "Consider adding a loading indicator to the AddPostForm component.",
+        "In the PostsList component, the retry button could be more prominent.",
+        "In the PostsWithFilters component, consider adding a loading indicator when filtering or sorting posts."
+      ],
+      "readability": 95,
+      "maintainability": 92,
+      "overall": "The code is well-structured and effectively utilizes RTK Query hooks for loading and error states. However, there are some minor improvements that could be made to enhance the user experience.",
+      "requirementCompliance": 98
+    }
+  },
+  {
+    "challengeId": "13-query-parameters",
+    "challengeName": "Query with Parameters and Detail View",
+    "aiReview": {
+      "challengeId": "13-query-parameters",
+      "timestamp": "2026-07-13T17:04:40.582Z",
+      "score": 91,
+      "feedback": [],
+      "strengths": [
+        "The use of RTK Query and Redux Toolkit is well-implemented and follows best practices.",
+        "The code is well-structured and easy to follow.",
+        "The use of TypeScript is a great choice for this project."
+      ],
+      "improvements": [
+        "Some of the variable names could be more descriptive.",
+        "There are a few places where the code could be simplified.",
+        "Consider adding more comments to explain the purpose of certain functions or variables."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "The code is well-organized and follows best practices for RTK Query and Redux Toolkit. However, there are a few areas where it could be improved for better readability and maintainability.",
+      "requirementCompliance": 95
+    }
   }
 ]

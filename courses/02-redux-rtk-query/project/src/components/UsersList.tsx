@@ -1,14 +1,20 @@
 import { useGetUsersQuery } from '../api/apiSlice'
+import ErrorDisplay from './ErrorDisplay'
 
 export default function UsersList() {
-  const { data, isLoading, isError, refetch } = useGetUsersQuery()
+  const { data, isLoading, isError, error, refetch } = useGetUsersQuery()
 
   if (isLoading) {
-    return <div data-testid="users-loading">Loading...</div>
+    return <div data-testid="users-loading">Loading users...</div>
   }
 
   if (isError) {
-    return <div data-testid="users-error">Error loading users.</div>
+    return (
+      <ErrorDisplay
+        error={(error as Error)?.message ?? 'Failed to load users.'}
+        onRetry={refetch}
+      />
+    )
   }
 
   return (

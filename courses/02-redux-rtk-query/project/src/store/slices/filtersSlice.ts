@@ -1,27 +1,27 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 
 interface FiltersState {
-  search: string
-  category: string
+  sortBy: 'newest' | 'oldest'
+  filterUserId: number | null
 }
 
 const initialState: FiltersState = {
-  search: '',
-  category: 'all',
+  sortBy: 'newest',
+  filterUserId: null,
 }
 
 const filtersSlice = createSlice({
   name: 'filters',
   initialState,
   reducers: {
-    setSearch(state, action: PayloadAction<string>) {
-      state.search = action.payload
+    setSortBy(state, action: PayloadAction<'newest' | 'oldest'>) {
+      state.sortBy = action.payload
     },
-    setCategory(state, action: PayloadAction<string>) {
-      state.category = action.payload
+    setFilterUserId(state, action: PayloadAction<number | null>) {
+      state.filterUserId = action.payload
     },
   },
 })
 
-export const { setSearch, setCategory } = filtersSlice.actions
+export const { setSortBy, setFilterUserId } = filtersSlice.actions
 export default filtersSlice.reducer
