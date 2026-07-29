@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import ChallengeList from './components/ChallengeList'
 
 export default function Home() {
@@ -10,6 +11,9 @@ export default function Home() {
           Work on challenges by modifying code in <code>app/</code> directory.
           Run <code>npm run dev</code> to see your changes.
         </p>
+        <nav>
+          <Link href="/about">About</Link>
+        </nav>
       </header>
       <ChallengeList />
     </main>

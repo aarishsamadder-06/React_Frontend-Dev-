@@ -1,13 +1,13 @@
 {
-  "lastUpdated": "2026-07-13T17:04:42.278Z",
+  "lastUpdated": "2026-07-27T19:01:26.027Z",
   "pathway": {
     "name": "Modern React Engineer",
     "version": "1.0.0",
-    "overallScore": 54.5,
-    "completionPercentage": 67.9,
-    "badgeLevel": "none",
+    "overallScore": 83.7,
+    "completionPercentage": 77.4,
+    "badgeLevel": "silver",
     "totalChallenges": 53,
-    "completedChallenges": 36
+    "completedChallenges": 41
   },
   "courses": {
     "01-react-fundamentals": {
@@ -575,12 +575,88 @@
     "03-nextjs-app-router": {
       "courseId": "03-nextjs-app-router",
       "courseName": "Next.js App Router",
-      "averageScore": 0,
-      "completionPercentage": 0,
+      "averageScore": 86,
+      "completionPercentage": 29.4,
       "badgeLevel": "none",
       "totalChallenges": 17,
-      "completedChallenges": 0,
-      "challenges": {}
+      "completedChallenges": 5,
+      "challenges": {
+        "01-app-router-pages-layout": {
+          "challengeId": "01-app-router-pages-layout",
+          "challengeName": "App Router, Pages, and Layout",
+          "passed": true,
+          "score": 83.12,
+          "lastRun": "2026-07-27T11:17:17.871Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 100,
+            "architecture": 91.7,
+            "bestPractices": 100,
+            "e2eTests": 0,
+            "aiReview": 93
+          }
+        },
+        "02-server-and-client-components": {
+          "challengeId": "02-server-and-client-components",
+          "challengeName": "Server and Client Components",
+          "passed": true,
+          "score": 83.95,
+          "lastRun": "2026-07-27T11:29:25.504Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 100,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 0,
+            "aiReview": 93
+          }
+        },
+        "03-data-fetching-server": {
+          "challengeId": "03-data-fetching-server",
+          "challengeName": "Data Fetching in Server Components",
+          "passed": true,
+          "score": 90.7,
+          "lastRun": "2026-07-27T11:36:10.291Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 100,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 50,
+            "aiReview": 88
+          }
+        },
+        "04-api-route-handlers": {
+          "challengeId": "04-api-route-handlers",
+          "challengeName": "API Route Handlers",
+          "passed": true,
+          "score": 88.95,
+          "lastRun": "2026-07-27T12:04:06.318Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 100,
+            "architecture": 0,
+            "bestPractices": 100,
+            "e2eTests": 100,
+            "aiReview": 93
+          }
+        },
+        "05-loading-and-streaming": {
+          "challengeId": "05-loading-and-streaming",
+          "challengeName": "Loading and Streaming",
+          "passed": true,
+          "score": 83.2,
+          "lastRun": "2026-07-27T19:01:03.733Z",
+          "scores": {
+            "functionalTests": 100,
+            "codeQuality": 100,
+            "architecture": 100,
+            "bestPractices": 100,
+            "e2eTests": 0,
+            "aiReview": 88
+          }
+        }
+      }
     }
   }
 }

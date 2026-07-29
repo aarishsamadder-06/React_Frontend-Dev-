@@ -64,20 +64,20 @@ npm run review -- --challenge=01-app-router-pages-layout
 
 ## 📊 Progress Evidence
 
-*Auto-updated when you run review. Last run: 13/7/2026, 10:34:42 pm*
+*Auto-updated when you run review. Last run: 28/7/2026, 12:31:25 am*
 
 | Metric | Value |
 |--------|-------|
-| Challenges completed | 0 / 17 (0%) |
-| Average score | 0% |
+| Challenges completed | 5 / 17 (29.4%) |
+| Average score | 86% |
 
 | Challenge | Skills covered | Status |
 |-----------|----------------|--------|
-| App Router, Pages, and Layout | Next.js App Router, File-based Routing, Link Component, Layout, Page Structure | — |
-| Server and Client Components | Server Components, Client Components, 'use client', useState, Event handlers | — |
-| Data Fetching in Server Components | Async Server Components, fetch, Data fetching, Server-side data | — |
-| API Route Handlers | Route Handlers, app/api, GET, POST, Response.json | — |
-| Loading and Streaming | loading.tsx, Streaming, Suspense, Loading UI | — |
+| App Router, Pages, and Layout | Next.js App Router, File-based Routing, Link Component, Layout, Page Structure | Passed |
+| Server and Client Components | Server Components, Client Components, 'use client', useState, Event handlers | Passed |
+| Data Fetching in Server Components | Async Server Components, fetch, Data fetching, Server-side data | Passed |
+| API Route Handlers | Route Handlers, app/api, GET, POST, Response.json | Passed |
+| Loading and Streaming | loading.tsx, Streaming, Suspense, Loading UI | Passed |
 | Dynamic Routes | Dynamic Routes, [id], params, generateStaticParams | — |
 | Static and Dynamic Rendering | Static Rendering, Dynamic Rendering, force-static, force-dynamic | — |
 | SSR (Server-Side Rendering) | SSR, force-dynamic, cache: no-store, Server-side rendering | — |

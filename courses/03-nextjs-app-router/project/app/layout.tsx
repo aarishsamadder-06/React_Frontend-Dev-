@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import './globals.css'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Next.js App Router Project',
@@ -13,7 +13,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <nav>
+          <Link href="/">Home</Link>
+          <Link href="/about">About</Link>
+        </nav>
+        {children}
+      </body>
     </html>
   )
 }

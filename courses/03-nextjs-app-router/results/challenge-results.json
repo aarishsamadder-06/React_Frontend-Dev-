@@ -1,1 +1,1850 @@
-[]
+[
+  {
+    "challengeId": "01-app-router-pages-layout",
+    "challengeName": "App Router, Pages, and Layout",
+    "timestamp": "2026-07-27T11:17:17.871Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 100,
+      "architecture": 91.7,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 93
+    },
+    "totalScore": 83.12,
+    "passed": true,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 5,
+      "passedTests": 5,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 01: App Router, Pages, and Layout"
+              ],
+              "fullName": " Challenge 01: App Router, Pages, and Layout should have app/page.tsx",
+              "status": "passed",
+              "title": "should have app/page.tsx",
+              "duration": 0,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 01: App Router, Pages, and Layout"
+              ],
+              "fullName": " Challenge 01: App Router, Pages, and Layout should have app/about/page.tsx",
+              "status": "passed",
+              "title": "should have app/about/page.tsx",
+              "duration": 0,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 01: App Router, Pages, and Layout"
+              ],
+              "fullName": " Challenge 01: App Router, Pages, and Layout should use Server Components (no use client)",
+              "status": "passed",
+              "title": "should use Server Components (no use client)",
+              "duration": 2,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 01: App Router, Pages, and Layout"
+              ],
+              "fullName": " Challenge 01: App Router, Pages, and Layout should use Next.js Link component",
+              "status": "passed",
+              "title": "should use Next.js Link component",
+              "duration": 2,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 01: App Router, Pages, and Layout"
+              ],
+              "fullName": " Challenge 01: App Router, Pages, and Layout should have proper App Router structure",
+              "status": "passed",
+              "title": "should have proper App Router structure",
+              "duration": 0,
+              "failureMessages": []
+            }
+          ],
+          "startTime": 1785151041994,
+          "endTime": 1785151041999,
+          "status": "passed",
+          "message": "",
+          "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/03-nextjs-app-router/project/tests/challenge-01.test.tsx"
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 100,
+      "passed": true,
+      "totalIssues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "details": [
+        {
+          "filePath": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\app\\about\\page.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\app\\layout.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\app\\page.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": []
+        }
+      ]
+    },
+    "architectureResults": {
+      "score": 91.7,
+      "passed": true,
+      "patternsFound": [
+        "serverComponent",
+        "Link",
+        "fileBasedRouting",
+        "appDirectory",
+        "serverComponent",
+        "Link",
+        "fileBasedRouting",
+        "appDirectory",
+        "serverComponent",
+        "Link",
+        "appDirectory"
+      ],
+      "patternsMissing": [
+        "fileBasedRouting"
+      ],
+      "details": [
+        {
+          "file": "app/page.tsx",
+          "patternsFound": [
+            "serverComponent",
+            "Link",
+            "fileBasedRouting",
+            "appDirectory"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "app/about/page.tsx",
+          "patternsFound": [
+            "serverComponent",
+            "Link",
+            "fileBasedRouting",
+            "appDirectory"
+          ],
+          "patternsMissing": []
+        },
+        {
+          "file": "app/layout.tsx",
+          "patternsFound": [
+            "serverComponent",
+            "Link",
+            "appDirectory"
+          ],
+          "patternsMissing": [
+            "fileBasedRouting"
+          ]
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 0,
+      "passed": false,
+      "totalTests": 3,
+      "passedTests": 0,
+      "failedTests": 3,
+      "details": [
+        {
+          "title": "challenge-01.spec.ts",
+          "file": "challenge-01.spec.ts",
+          "column": 0,
+          "line": 0,
+          "specs": [],
+          "suites": [
+            {
+              "title": "Challenge 01: App Router, Pages, and Layout - E2E",
+              "file": "challenge-01.spec.ts",
+              "line": 7,
+              "column": 6,
+              "specs": [
+                {
+                  "title": "should display home page",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 2,
+                          "error": {
+                            "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+                            "stack": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                          },
+                          "errors": [
+                            {
+                              "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-27T11:17:36.108Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-01-Challenge-01--8330e-2E-should-display-home-page-chromium\\error-context.md"
+                            }
+                          ]
+                        },
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 2,
+                          "error": {
+                            "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+                            "stack": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                          },
+                          "errors": [
+                            {
+                              "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 1,
+                          "startTime": "2026-07-27T11:17:36.582Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-01-Challenge-01--8330e-2E-should-display-home-page-chromium-retry1\\error-context.md"
+                            },
+                            {
+                              "name": "trace",
+                              "contentType": "application/zip",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-01-Challenge-01--8330e-2E-should-display-home-page-chromium-retry1\\trace.zip"
+                            }
+                          ]
+                        },
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 1,
+                          "error": {
+                            "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+                            "stack": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                          },
+                          "errors": [
+                            {
+                              "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 2,
+                          "startTime": "2026-07-27T11:17:37.050Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-01-Challenge-01--8330e-2E-should-display-home-page-chromium-retry2\\error-context.md"
+                            }
+                          ]
+                        }
+                      ],
+                      "status": "unexpected"
+                    }
+                  ],
+                  "id": "77d07a436f655ce05c79-377bcbe80bc7e79b67fe",
+                  "file": "challenge-01.spec.ts",
+                  "line": 12,
+                  "column": 7
+                },
+                {
+                  "title": "should have link to about and navigate to about page",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 2,
+                          "error": {
+                            "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+                            "stack": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                          },
+                          "errors": [
+                            {
+                              "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-27T11:17:37.520Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-01-Challenge-01--fbc99--and-navigate-to-about-page-chromium\\error-context.md"
+                            }
+                          ]
+                        },
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 1,
+                          "error": {
+                            "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+                            "stack": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                          },
+                          "errors": [
+                            {
+                              "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 1,
+                          "startTime": "2026-07-27T11:17:37.960Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-01-Challenge-01--fbc99--and-navigate-to-about-page-chromium-retry1\\error-context.md"
+                            },
+                            {
+                              "name": "trace",
+                              "contentType": "application/zip",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-01-Challenge-01--fbc99--and-navigate-to-about-page-chromium-retry1\\trace.zip"
+                            }
+                          ]
+                        },
+                        {
+                          "workerIndex": 5,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 1,
+                          "error": {
+                            "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+                            "stack": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                          },
+                          "errors": [
+                            {
+                              "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 2,
+                          "startTime": "2026-07-27T11:17:38.443Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-01-Challenge-01--fbc99--and-navigate-to-about-page-chromium-retry2\\error-context.md"
+                            }
+                          ]
+                        }
+                      ],
+                      "status": "unexpected"
+                    }
+                  ],
+                  "id": "77d07a436f655ce05c79-ced3a0064b6790158cff",
+                  "file": "challenge-01.spec.ts",
+                  "line": 16,
+                  "column": 7
+                },
+                {
+                  "title": "should have at least one navigation link",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 6,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 1,
+                          "error": {
+                            "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+                            "stack": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                          },
+                          "errors": [
+                            {
+                              "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-27T11:17:38.915Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-01-Challenge-01--42bf6-t-least-one-navigation-link-chromium\\error-context.md"
+                            }
+                          ]
+                        },
+                        {
+                          "workerIndex": 7,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 1,
+                          "error": {
+                            "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+                            "stack": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                          },
+                          "errors": [
+                            {
+                              "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 1,
+                          "startTime": "2026-07-27T11:17:39.368Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-01-Challenge-01--42bf6-t-least-one-navigation-link-chromium-retry1\\error-context.md"
+                            },
+                            {
+                              "name": "trace",
+                              "contentType": "application/zip",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-01-Challenge-01--42bf6-t-least-one-navigation-link-chromium-retry1\\trace.zip"
+                            }
+                          ]
+                        },
+                        {
+                          "workerIndex": 8,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 1,
+                          "error": {
+                            "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+                            "stack": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                          },
+                          "errors": [
+                            {
+                              "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 2,
+                          "startTime": "2026-07-27T11:17:39.831Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-01-Challenge-01--42bf6-t-least-one-navigation-link-chromium-retry2\\error-context.md"
+                            }
+                          ]
+                        }
+                      ],
+                      "status": "unexpected"
+                    }
+                  ],
+                  "id": "77d07a436f655ce05c79-bbb426c2731df9bd6414",
+                  "file": "challenge-01.spec.ts",
+                  "line": 24,
+                  "column": 7
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "error": "Command failed: npx playwright test \"tests/e2e/challenge-01.spec.ts\" --reporter=json"
+    },
+    "aiReviewResults": {
+      "challengeId": "01-app-router-pages-layout",
+      "timestamp": "2026-07-27T11:17:40.195Z",
+      "score": 93,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript and ESLint ensures a high level of code quality and maintainability.",
+        "The code is well-commented, making it easy to understand the functionality of each component."
+      ],
+      "improvements": [
+        "In the `app/layout.tsx` file, the navigation links could be moved to a separate component to improve code reusability.",
+        "In the `app/page.tsx` file, the `ChallengeList` component could be imported and used in a more efficient way to reduce unnecessary re-renders.",
+        "In the `app/about/page.tsx` file, the `Link` component could be wrapped in a `div` element to improve accessibility."
+      ],
+      "readability": 95,
+      "maintainability": 90,
+      "overall": "The code is well-written, maintainable, and follows best practices. However, there are a few areas that could be improved to make the code even more efficient and accessible."
+    },
+    "aiResults": {
+      "challengeId": "01-app-router-pages-layout",
+      "timestamp": "2026-07-27T11:17:40.195Z",
+      "score": 93,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and follows a consistent naming convention.",
+        "The use of TypeScript and ESLint ensures a high level of code quality and maintainability.",
+        "The code is well-commented, making it easy to understand the functionality of each component."
+      ],
+      "improvements": [
+        "In the `app/layout.tsx` file, the navigation links could be moved to a separate component to improve code reusability.",
+        "In the `app/page.tsx` file, the `ChallengeList` component could be imported and used in a more efficient way to reduce unnecessary re-renders.",
+        "In the `app/about/page.tsx` file, the `Link` component could be wrapped in a `div` element to improve accessibility."
+      ],
+      "readability": 95,
+      "maintainability": 90,
+      "overall": "The code is well-written, maintainable, and follows best practices. However, there are a few areas that could be improved to make the code even more efficient and accessible."
+    }
+  },
+  {
+    "challengeId": "02-server-and-client-components",
+    "challengeName": "Server and Client Components",
+    "timestamp": "2026-07-27T11:29:25.504Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 100,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 93
+    },
+    "totalScore": 83.95,
+    "passed": true,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 3,
+      "passedTests": 3,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 02: Server and Client Components"
+              ],
+              "fullName": " Challenge 02: Server and Client Components should have at least one Client Component with use client",
+              "status": "passed",
+              "title": "should have at least one Client Component with use client",
+              "duration": 2,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 02: Server and Client Components"
+              ],
+              "fullName": " Challenge 02: Server and Client Components should have Client Component that uses state or event handlers",
+              "status": "passed",
+              "title": "should have Client Component that uses state or event handlers",
+              "duration": 1,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 02: Server and Client Components"
+              ],
+              "fullName": " Challenge 02: Server and Client Components should have App Router structure",
+              "status": "passed",
+              "title": "should have App Router structure",
+              "duration": 1,
+              "failureMessages": []
+            }
+          ],
+          "startTime": 1785151768688,
+          "endTime": 1785151768692,
+          "status": "passed",
+          "message": "",
+          "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/03-nextjs-app-router/project/tests/challenge-02.test.tsx"
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 100,
+      "passed": true,
+      "totalIssues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "details": [
+        {
+          "filePath": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\app\\components\\Counter.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\app\\layout.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\app\\page.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": []
+        }
+      ]
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "serverComponent",
+        "useClient",
+        "useState",
+        "serverComponent"
+      ],
+      "patternsMissing": [
+        "useClient",
+        "useState",
+        "serverComponent",
+        "useClient",
+        "useState"
+      ],
+      "details": [
+        {
+          "file": "app/page.tsx",
+          "patternsFound": [
+            "serverComponent"
+          ],
+          "patternsMissing": [
+            "useClient",
+            "useState"
+          ]
+        },
+        {
+          "file": "app/components/Counter.tsx",
+          "patternsFound": [
+            "useClient",
+            "useState"
+          ],
+          "patternsMissing": [
+            "serverComponent"
+          ]
+        },
+        {
+          "file": "app/layout.tsx",
+          "patternsFound": [
+            "serverComponent"
+          ],
+          "patternsMissing": [
+            "useClient",
+            "useState"
+          ]
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 0,
+      "passed": false,
+      "totalTests": 2,
+      "passedTests": 0,
+      "failedTests": 2,
+      "details": [
+        {
+          "title": "challenge-02.spec.ts",
+          "file": "challenge-02.spec.ts",
+          "column": 0,
+          "line": 0,
+          "specs": [],
+          "suites": [
+            {
+              "title": "Challenge 02: Server and Client Components - E2E",
+              "file": "challenge-02.spec.ts",
+              "line": 7,
+              "column": 6,
+              "specs": [
+                {
+                  "title": "should display home page",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 2,
+                          "error": {
+                            "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+                            "stack": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                          },
+                          "errors": [
+                            {
+                              "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-27T11:29:42.939Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-02-Challenge-02--01124-2E-should-display-home-page-chromium\\error-context.md"
+                            }
+                          ]
+                        },
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 1,
+                          "error": {
+                            "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+                            "stack": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                          },
+                          "errors": [
+                            {
+                              "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 1,
+                          "startTime": "2026-07-27T11:29:43.490Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-02-Challenge-02--01124-2E-should-display-home-page-chromium-retry1\\error-context.md"
+                            },
+                            {
+                              "name": "trace",
+                              "contentType": "application/zip",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-02-Challenge-02--01124-2E-should-display-home-page-chromium-retry1\\trace.zip"
+                            }
+                          ]
+                        },
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 1,
+                          "error": {
+                            "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+                            "stack": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                          },
+                          "errors": [
+                            {
+                              "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 2,
+                          "startTime": "2026-07-27T11:29:44.017Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-02-Challenge-02--01124-2E-should-display-home-page-chromium-retry2\\error-context.md"
+                            }
+                          ]
+                        }
+                      ],
+                      "status": "unexpected"
+                    }
+                  ],
+                  "id": "42dc79384a61c0717494-913d124fcf0db785346d",
+                  "file": "challenge-02.spec.ts",
+                  "line": 12,
+                  "column": 7
+                },
+                {
+                  "title": "should have interactive element (button or link)",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 2,
+                          "error": {
+                            "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+                            "stack": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                          },
+                          "errors": [
+                            {
+                              "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-27T11:29:44.567Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-02-Challenge-02--4d07e-ive-element-button-or-link--chromium\\error-context.md"
+                            }
+                          ]
+                        },
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 2,
+                          "error": {
+                            "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+                            "stack": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                          },
+                          "errors": [
+                            {
+                              "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 1,
+                          "startTime": "2026-07-27T11:29:45.104Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-02-Challenge-02--4d07e-ive-element-button-or-link--chromium-retry1\\error-context.md"
+                            },
+                            {
+                              "name": "trace",
+                              "contentType": "application/zip",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-02-Challenge-02--4d07e-ive-element-button-or-link--chromium-retry1\\trace.zip"
+                            }
+                          ]
+                        },
+                        {
+                          "workerIndex": 5,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 1,
+                          "error": {
+                            "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+                            "stack": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                          },
+                          "errors": [
+                            {
+                              "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 2,
+                          "startTime": "2026-07-27T11:29:45.637Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-02-Challenge-02--4d07e-ive-element-button-or-link--chromium-retry2\\error-context.md"
+                            }
+                          ]
+                        }
+                      ],
+                      "status": "unexpected"
+                    }
+                  ],
+                  "id": "42dc79384a61c0717494-9726b28217a56c91520e",
+                  "file": "challenge-02.spec.ts",
+                  "line": 16,
+                  "column": 7
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "error": "Command failed: npx playwright test \"tests/e2e/challenge-02.spec.ts\" --reporter=json"
+    },
+    "aiReviewResults": {
+      "challengeId": "02-server-and-client-components",
+      "timestamp": "2026-07-27T11:29:46.086Z",
+      "score": 93,
+      "feedback": [],
+      "strengths": [
+        "Clear separation of concerns between Server and Client Components",
+        "Proper use of TypeScript and ESLint",
+        "Well-structured code with clear naming conventions"
+      ],
+      "improvements": [
+        "Consider adding more interactive elements to the Client Component to demonstrate its capabilities",
+        "In the Server Component page, consider adding a loading indicator or a message to indicate that the Client Component is being rendered",
+        "In the `app/layout.tsx` file, consider using a more robust way to handle navigation links, such as using a library like `react-router-dom`"
+      ],
+      "readability": 90,
+      "maintainability": 95,
+      "overall": "The code is well-structured, readable, and maintainable. It effectively demonstrates the use of Server and Client Components in Next.js App Router. With a few minor improvements, it can be even more robust and user-friendly."
+    },
+    "aiResults": {
+      "challengeId": "02-server-and-client-components",
+      "timestamp": "2026-07-27T11:29:46.086Z",
+      "score": 93,
+      "feedback": [],
+      "strengths": [
+        "Clear separation of concerns between Server and Client Components",
+        "Proper use of TypeScript and ESLint",
+        "Well-structured code with clear naming conventions"
+      ],
+      "improvements": [
+        "Consider adding more interactive elements to the Client Component to demonstrate its capabilities",
+        "In the Server Component page, consider adding a loading indicator or a message to indicate that the Client Component is being rendered",
+        "In the `app/layout.tsx` file, consider using a more robust way to handle navigation links, such as using a library like `react-router-dom`"
+      ],
+      "readability": 90,
+      "maintainability": 95,
+      "overall": "The code is well-structured, readable, and maintainable. It effectively demonstrates the use of Server and Client Components in Next.js App Router. With a few minor improvements, it can be even more robust and user-friendly."
+    }
+  },
+  {
+    "challengeId": "03-data-fetching-server",
+    "challengeName": "Data Fetching in Server Components",
+    "timestamp": "2026-07-27T11:36:10.291Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 100,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 50,
+      "aiReview": 88
+    },
+    "totalScore": 90.7,
+    "passed": true,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 3,
+      "passedTests": 3,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 03: Data Fetching in Server Components"
+              ],
+              "fullName": " Challenge 03: Data Fetching in Server Components should have posts page (or equivalent data page)",
+              "status": "passed",
+              "title": "should have posts page (or equivalent data page)",
+              "duration": 1,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 03: Data Fetching in Server Components"
+              ],
+              "fullName": " Challenge 03: Data Fetching in Server Components should have async Server Component",
+              "status": "passed",
+              "title": "should have async Server Component",
+              "duration": 1,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 03: Data Fetching in Server Components"
+              ],
+              "fullName": " Challenge 03: Data Fetching in Server Components should fetch data in Server Component",
+              "status": "passed",
+              "title": "should fetch data in Server Component",
+              "duration": 0,
+              "failureMessages": []
+            }
+          ],
+          "startTime": 1785152173197,
+          "endTime": 1785152173199,
+          "status": "passed",
+          "message": "",
+          "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/03-nextjs-app-router/project/tests/challenge-03.test.tsx"
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 100,
+      "passed": true,
+      "totalIssues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "details": [
+        {
+          "filePath": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\app\\posts\\page.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": []
+        }
+      ]
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "asyncServerComponent",
+        "fetch",
+        "await"
+      ],
+      "patternsMissing": [],
+      "details": [
+        {
+          "file": "app/posts/page.tsx",
+          "patternsFound": [
+            "asyncServerComponent",
+            "fetch",
+            "await"
+          ],
+          "patternsMissing": []
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 50,
+      "passed": false,
+      "totalTests": 2,
+      "passedTests": 1,
+      "failedTests": 1,
+      "details": [
+        {
+          "title": "challenge-03.spec.ts",
+          "file": "challenge-03.spec.ts",
+          "column": 0,
+          "line": 0,
+          "specs": [],
+          "suites": [
+            {
+              "title": "Challenge 03: Data Fetching - E2E",
+              "file": "challenge-03.spec.ts",
+              "line": 7,
+              "column": 6,
+              "specs": [
+                {
+                  "title": "should load posts page with content",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 1,
+                          "error": {
+                            "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+                            "stack": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                          },
+                          "errors": [
+                            {
+                              "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-27T11:36:24.993Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-03-Challenge-03--1a599-oad-posts-page-with-content-chromium\\error-context.md"
+                            }
+                          ]
+                        },
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 1,
+                          "error": {
+                            "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+                            "stack": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                          },
+                          "errors": [
+                            {
+                              "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 1,
+                          "startTime": "2026-07-27T11:36:25.505Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-03-Challenge-03--1a599-oad-posts-page-with-content-chromium-retry1\\error-context.md"
+                            },
+                            {
+                              "name": "trace",
+                              "contentType": "application/zip",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-03-Challenge-03--1a599-oad-posts-page-with-content-chromium-retry1\\trace.zip"
+                            }
+                          ]
+                        },
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 2,
+                          "error": {
+                            "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+                            "stack": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                          },
+                          "errors": [
+                            {
+                              "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 2,
+                          "startTime": "2026-07-27T11:36:26.014Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-03-Challenge-03--1a599-oad-posts-page-with-content-chromium-retry2\\error-context.md"
+                            }
+                          ]
+                        }
+                      ],
+                      "status": "unexpected"
+                    }
+                  ],
+                  "id": "abe74fb7538c55bf8146-4bec499cece7348545ba",
+                  "file": "challenge-03.spec.ts",
+                  "line": 8,
+                  "column": 7
+                },
+                {
+                  "title": "should have API route that returns JSON",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 419,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-27T11:36:26.552Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "abe74fb7538c55bf8146-b699cd20cbc61b3b8da4",
+                  "file": "challenge-03.spec.ts",
+                  "line": 15,
+                  "column": 7
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "error": "Command failed: npx playwright test \"tests/e2e/challenge-03.spec.ts\" --reporter=json"
+    },
+    "aiReviewResults": {
+      "challengeId": "03-data-fetching-server",
+      "timestamp": "2026-07-27T11:36:27.354Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code uses TypeScript, which is great for type safety and maintainability.",
+        "The async/await pattern is used correctly to handle the fetch operation.",
+        "The code handles errors and empty states properly."
+      ],
+      "improvements": [
+        "Consider using a more robust error handling mechanism, such as a dedicated error component or a centralized error handling system.",
+        "The code could benefit from some whitespace and formatting improvements to make it easier to read.",
+        "Consider adding some loading state handling to improve the user experience."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "This code is well-structured and effectively uses async/await to handle the fetch operation. However, there are some areas for improvement, such as error handling and loading state handling. With some minor adjustments, this code can be even more maintainable and efficient."
+    },
+    "aiResults": {
+      "challengeId": "03-data-fetching-server",
+      "timestamp": "2026-07-27T11:36:27.354Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The code uses TypeScript, which is great for type safety and maintainability.",
+        "The async/await pattern is used correctly to handle the fetch operation.",
+        "The code handles errors and empty states properly."
+      ],
+      "improvements": [
+        "Consider using a more robust error handling mechanism, such as a dedicated error component or a centralized error handling system.",
+        "The code could benefit from some whitespace and formatting improvements to make it easier to read.",
+        "Consider adding some loading state handling to improve the user experience."
+      ],
+      "readability": 85,
+      "maintainability": 90,
+      "overall": "This code is well-structured and effectively uses async/await to handle the fetch operation. However, there are some areas for improvement, such as error handling and loading state handling. With some minor adjustments, this code can be even more maintainable and efficient."
+    }
+  },
+  {
+    "challengeId": "04-api-route-handlers",
+    "challengeName": "API Route Handlers",
+    "timestamp": "2026-07-27T12:04:06.318Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 100,
+      "architecture": 0,
+      "bestPractices": 100,
+      "e2eTests": 100,
+      "aiReview": 93
+    },
+    "totalScore": 88.95,
+    "passed": true,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 2,
+      "passedTests": 2,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 04: API Route Handlers"
+              ],
+              "fullName": " Challenge 04: API Route Handlers should have API route file",
+              "status": "passed",
+              "title": "should have API route file",
+              "duration": 1,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 04: API Route Handlers"
+              ],
+              "fullName": " Challenge 04: API Route Handlers should export GET that returns JSON",
+              "status": "passed",
+              "title": "should export GET that returns JSON",
+              "duration": 1,
+              "failureMessages": []
+            }
+          ],
+          "startTime": 1785153849520,
+          "endTime": 1785153849522,
+          "status": "passed",
+          "message": "",
+          "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/03-nextjs-app-router/project/tests/challenge-04.test.tsx"
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 100,
+      "passed": true,
+      "totalIssues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "details": [
+        {
+          "filePath": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\app\\api\\posts\\route.ts",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": []
+        }
+      ]
+    },
+    "architectureResults": {
+      "score": 0,
+      "passed": false,
+      "patternsFound": [],
+      "patternsMissing": [
+        "routeHandler",
+        "GET",
+        "ResponseJson"
+      ],
+      "details": [
+        {
+          "file": "app/api/posts/route.ts",
+          "patternsFound": [],
+          "patternsMissing": [
+            "routeHandler",
+            "GET",
+            "ResponseJson"
+          ]
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 1,
+      "passedTests": 1,
+      "failedTests": 0,
+      "details": [
+        {
+          "title": "challenge-04.spec.ts",
+          "file": "challenge-04.spec.ts",
+          "column": 0,
+          "line": 0,
+          "specs": [],
+          "suites": [
+            {
+              "title": "Challenge 04: API Route Handlers - E2E",
+              "file": "challenge-04.spec.ts",
+              "line": 7,
+              "column": 6,
+              "specs": [
+                {
+                  "title": "should have API route that returns JSON",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 428,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-27T12:04:26.878Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "0401c8ab289c6ab836d0-7ddfff09b261747e7f47",
+                  "file": "challenge-04.spec.ts",
+                  "line": 8,
+                  "column": 7
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "screenshots": []
+    },
+    "aiReviewResults": {
+      "challengeId": "04-api-route-handlers",
+      "timestamp": "2026-07-27T12:04:27.856Z",
+      "score": 93,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and easy to follow, with clear and concise function names and variable declarations.",
+        "The use of TypeScript for request/response shapes is a great practice, ensuring type safety and code maintainability.",
+        "The code passes ESLint, indicating a good adherence to coding standards and best practices."
+      ],
+      "improvements": [
+        "Consider adding input validation for the POST request body to prevent potential security vulnerabilities. For example, you could check if the `userId`, `title`, and `body` properties exist and are of the correct type.",
+        "The `posts` array is mutable and can be modified by multiple requests. Consider using a database or a more robust data storage solution to ensure data consistency and integrity.",
+        "The `id` property in the `Post` interface is not explicitly defined as a unique identifier. Consider adding a unique constraint or a validation rule to ensure that each post has a unique `id`."
+      ],
+      "readability": 90,
+      "maintainability": 95,
+      "overall": "This code is well-structured, maintainable, and follows best practices. However, there are some areas for improvement, such as input validation and data consistency, which can be addressed to make the code more robust and secure."
+    },
+    "aiResults": {
+      "challengeId": "04-api-route-handlers",
+      "timestamp": "2026-07-27T12:04:27.856Z",
+      "score": 93,
+      "feedback": [],
+      "strengths": [
+        "The code is well-structured and easy to follow, with clear and concise function names and variable declarations.",
+        "The use of TypeScript for request/response shapes is a great practice, ensuring type safety and code maintainability.",
+        "The code passes ESLint, indicating a good adherence to coding standards and best practices."
+      ],
+      "improvements": [
+        "Consider adding input validation for the POST request body to prevent potential security vulnerabilities. For example, you could check if the `userId`, `title`, and `body` properties exist and are of the correct type.",
+        "The `posts` array is mutable and can be modified by multiple requests. Consider using a database or a more robust data storage solution to ensure data consistency and integrity.",
+        "The `id` property in the `Post` interface is not explicitly defined as a unique identifier. Consider adding a unique constraint or a validation rule to ensure that each post has a unique `id`."
+      ],
+      "readability": 90,
+      "maintainability": 95,
+      "overall": "This code is well-structured, maintainable, and follows best practices. However, there are some areas for improvement, such as input validation and data consistency, which can be addressed to make the code more robust and secure."
+    }
+  },
+  {
+    "challengeId": "05-loading-and-streaming",
+    "challengeName": "Loading and Streaming",
+    "timestamp": "2026-07-27T19:01:03.733Z",
+    "scores": {
+      "functionalTests": 100,
+      "codeQuality": 100,
+      "architecture": 100,
+      "bestPractices": 100,
+      "e2eTests": 0,
+      "aiReview": 88
+    },
+    "totalScore": 83.2,
+    "passed": true,
+    "errors": [],
+    "warnings": [],
+    "testResults": {
+      "score": 100,
+      "passed": true,
+      "totalTests": 2,
+      "passedTests": 2,
+      "failedTests": 0,
+      "details": [
+        {
+          "assertionResults": [
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 05: Loading and Streaming"
+              ],
+              "fullName": " Challenge 05: Loading and Streaming should have loading.tsx in a route segment",
+              "status": "passed",
+              "title": "should have loading.tsx in a route segment",
+              "duration": 1,
+              "failureMessages": []
+            },
+            {
+              "ancestorTitles": [
+                "",
+                "Challenge 05: Loading and Streaming"
+              ],
+              "fullName": " Challenge 05: Loading and Streaming should export default loading component",
+              "status": "passed",
+              "title": "should export default loading component",
+              "duration": 1,
+              "failureMessages": []
+            }
+          ],
+          "startTime": 1785178867346,
+          "endTime": 1785178867348,
+          "status": "passed",
+          "message": "",
+          "name": "C:/Users/Aarish/OneDrive/Desktop/Spark+ Frontend/challenge-engine-react/courses/03-nextjs-app-router/project/tests/challenge-05.test.tsx"
+        }
+      ]
+    },
+    "lintResults": {
+      "score": 100,
+      "passed": true,
+      "totalIssues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "details": [
+        {
+          "filePath": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\app\\posts\\loading.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": []
+        },
+        {
+          "filePath": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\app\\posts\\page.tsx",
+          "messages": [],
+          "suppressedMessages": [],
+          "errorCount": 0,
+          "fatalErrorCount": 0,
+          "warningCount": 0,
+          "fixableErrorCount": 0,
+          "fixableWarningCount": 0,
+          "usedDeprecatedRules": []
+        }
+      ]
+    },
+    "architectureResults": {
+      "score": 100,
+      "passed": true,
+      "patternsFound": [
+        "loadingTsx",
+        "Suspense"
+      ],
+      "patternsMissing": [
+        "Suspense",
+        "loadingTsx"
+      ],
+      "details": [
+        {
+          "file": "app/posts/loading.tsx",
+          "patternsFound": [
+            "loadingTsx"
+          ],
+          "patternsMissing": [
+            "Suspense"
+          ]
+        },
+        {
+          "file": "app/posts/page.tsx",
+          "patternsFound": [
+            "Suspense"
+          ],
+          "patternsMissing": [
+            "loadingTsx"
+          ]
+        }
+      ]
+    },
+    "bestPracticesResults": {
+      "score": 100,
+      "passed": true,
+      "issues": [],
+      "details": [],
+      "note": "No best practices requirements specified in challenge"
+    },
+    "e2eResults": {
+      "score": 0,
+      "passed": false,
+      "totalTests": 1,
+      "passedTests": 0,
+      "failedTests": 1,
+      "details": [
+        {
+          "title": "challenge-05.spec.ts",
+          "file": "challenge-05.spec.ts",
+          "column": 0,
+          "line": 0,
+          "specs": [],
+          "suites": [
+            {
+              "title": "Challenge 05: Loading and Streaming - E2E",
+              "file": "challenge-05.spec.ts",
+              "line": 7,
+              "column": 6,
+              "specs": [
+                {
+                  "title": "should load posts page",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 30000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 2,
+                          "error": {
+                            "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+                            "stack": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                          },
+                          "errors": [
+                            {
+                              "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-07-27T19:01:22.541Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-05-Challenge-05--de1aa--E2E-should-load-posts-page-chromium\\error-context.md"
+                            }
+                          ]
+                        },
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 2,
+                          "error": {
+                            "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+                            "stack": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                          },
+                          "errors": [
+                            {
+                              "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 1,
+                          "startTime": "2026-07-27T19:01:23.162Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-05-Challenge-05--de1aa--E2E-should-load-posts-page-chromium-retry1\\error-context.md"
+                            },
+                            {
+                              "name": "trace",
+                              "contentType": "application/zip",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-05-Challenge-05--de1aa--E2E-should-load-posts-page-chromium-retry1\\trace.zip"
+                            }
+                          ]
+                        },
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 2,
+                          "error": {
+                            "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝",
+                            "stack": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                          },
+                          "errors": [
+                            {
+                              "message": "Error: browserType.launch: Executable doesn't exist at C:\\pw-browsers\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe\n╔════════════════════════════════════════════════════════════╗\n║ Looks like Playwright was just installed or updated.       ║\n║ Please run the following command to download new browsers: ║\n║                                                            ║\n║     npx playwright install                                 ║\n║                                                            ║\n║ <3 Playwright Team                                         ║\n╚════════════════════════════════════════════════════════════╝"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 2,
+                          "startTime": "2026-07-27T19:01:23.881Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "C:\\Users\\Aarish\\OneDrive\\Desktop\\Spark+ Frontend\\challenge-engine-react\\courses\\03-nextjs-app-router\\project\\test-results\\challenge-05-Challenge-05--de1aa--E2E-should-load-posts-page-chromium-retry2\\error-context.md"
+                            }
+                          ]
+                        }
+                      ],
+                      "status": "unexpected"
+                    }
+                  ],
+                  "id": "ec25b63e8ac6a5e53e87-f77f982bcebd43afdcb3",
+                  "file": "challenge-05.spec.ts",
+                  "line": 8,
+                  "column": 7
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "error": "Command failed: npx playwright test \"tests/e2e/challenge-05.spec.ts\" --reporter=json"
+    },
+    "aiReviewResults": {
+      "challengeId": "05-loading-and-streaming",
+      "timestamp": "2026-07-27T19:01:24.320Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The use of Suspense with a fallback component is a great way to handle loading states in React.",
+        "The code is well-structured and easy to follow, with clear separation of concerns between the loading component and the PostsList function.",
+        "The use of TypeScript is a good practice, and the code is well-typed."
+      ],
+      "improvements": [
+        "In the Loading component, consider using a more visually appealing loading animation or a skeleton UI to improve the user experience.",
+        "In the PostsList function, consider adding some error handling to handle cases where the fetch request fails.",
+        "In the PostsPage component, consider adding some accessibility features, such as aria-labels and alt-text for the images."
+      ],
+      "readability": 90,
+      "maintainability": 85,
+      "overall": "The code is well-structured and effectively uses Suspense to handle loading states. However, there are some areas for improvement to enhance the user experience and accessibility of the application."
+    },
+    "aiResults": {
+      "challengeId": "05-loading-and-streaming",
+      "timestamp": "2026-07-27T19:01:24.320Z",
+      "score": 88,
+      "feedback": [],
+      "strengths": [
+        "The use of Suspense with a fallback component is a great way to handle loading states in React.",
+        "The code is well-structured and easy to follow, with clear separation of concerns between the loading component and the PostsList function.",
+        "The use of TypeScript is a good practice, and the code is well-typed."
+      ],
+      "improvements": [
+        "In the Loading component, consider using a more visually appealing loading animation or a skeleton UI to improve the user experience.",
+        "In the PostsList function, consider adding some error handling to handle cases where the fetch request fails.",
+        "In the PostsPage component, consider adding some accessibility features, such as aria-labels and alt-text for the images."
+      ],
+      "readability": 90,
+      "maintainability": 85,
+      "overall": "The code is well-structured and effectively uses Suspense to handle loading states. However, there are some areas for improvement to enhance the user experience and accessibility of the application."
+    }
+  }
+]

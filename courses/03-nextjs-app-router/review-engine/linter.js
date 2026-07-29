@@ -49,22 +49,15 @@ export async function runLinting(filesToCheck, projectDir, challengeMetadata = {
     };
   }
 
-  try {
-    // Run ESLint ONLY on specified files (not all files)
-    // Use npx eslint directly to avoid npm script which checks all files
-    const output = execSync(
-      `npx eslint ${filePaths.join(' ')} --format json`,
-      {
-        cwd: projectDir,
-        encoding: 'utf-8',
-        stdio: ['pipe', 'pipe', 'pipe']
-      }
-    );
+  // Strips non-JSON text (e.g. TypeScript version warnings) before the JSON array
+  function extractJSON(raw) {
+    const match = raw.match(/(\[[\s\S]*\])/);
+    if (match) return match[1];
+    return raw;
+  }
 
-    const lintResults = JSON.parse(output);
-    
-    // Calculate score based on errors and warnings
-    // Only count issues from files we're checking (filter by filePaths)
+  // Calculates score from parsed lint results
+  function calcScore(lintResults) {
     const filePathSet = new Set(filePaths.map(p => p.replace(/\\/g, '/')));
     let totalIssues = 0;
     let errors = 0;
@@ -72,7 +65,6 @@ export async function runLinting(filesToCheck, projectDir, challengeMetadata = {
 
     lintResults.forEach(file => {
       const normalizedPath = file.filePath.replace(/\\/g, '/');
-      // Only count issues from files we're actually checking
       const isTargetFile = filePathSet.has(normalizedPath) || 
                           filePaths.some(fp => normalizedPath.endsWith(fp.replace(/\\/g, '/')));
       if (isTargetFile) {
@@ -87,11 +79,26 @@ export async function runLinting(filesToCheck, projectDir, challengeMetadata = {
       }
     });
 
-    // Score: 100 - (errors * 10) - (warnings * 2), minimum 0
     const score = Math.max(0, 100 - (errors * 10) - (warnings * 2));
+    return { score: Math.round(score * 10) / 10, totalIssues, errors, warnings };
+  }
+
+  try {
+    // Quote each path to handle spaces in directory names (e.g. "Spark+ Frontend")
+    // 2>nul redirects stderr to nowhere on Windows, keeping stdout clean JSON only
+    const output = execSync(
+      `npx eslint ${filePaths.map(p => `"${p}"`).join(' ')} --format json 2>nul`,
+      {
+        cwd: projectDir,
+        encoding: 'utf-8',
+      }
+    );
+
+    const lintResults = JSON.parse(extractJSON(output));
+    const { score, totalIssues, errors, warnings } = calcScore(lintResults);
 
     return {
-      score: Math.round(score * 10) / 10,
+      score,
       passed: errors === 0,
       totalIssues,
       errors,
@@ -99,38 +106,13 @@ export async function runLinting(filesToCheck, projectDir, challengeMetadata = {
       details: lintResults
     };
   } catch (error) {
-    // ESLint exits with non-zero on errors, try to parse output
     try {
-      const errorOutput = error.stdout || error.stderr || '';
-      const lintResults = JSON.parse(errorOutput);
-      
-      // Only count issues from files we're checking (filter by filePaths)
-      const filePathSet = new Set(filePaths.map(p => p.replace(/\\/g, '/')));
-      let totalIssues = 0;
-      let errors = 0;
-      let warnings = 0;
-
-      lintResults.forEach(file => {
-        const normalizedPath = file.filePath.replace(/\\/g, '/');
-        // Only count issues from files we're actually checking
-        const isTargetFile = filePathSet.has(normalizedPath) || 
-                            filePaths.some(fp => normalizedPath.endsWith(fp.replace(/\\/g, '/')));
-        if (isTargetFile) {
-          file.messages.forEach(message => {
-            totalIssues++;
-            if (message.severity === 2) {
-              errors++;
-            } else {
-              warnings++;
-            }
-          });
-        }
-      });
-
-      const score = Math.max(0, 100 - (errors * 10) - (warnings * 2));
+      const rawOutput = error.stdout || error.stderr || '';
+      const lintResults = JSON.parse(extractJSON(rawOutput));
+      const { score, totalIssues, errors, warnings } = calcScore(lintResults);
 
       return {
-        score: Math.round(score * 10) / 10,
+        score,
         passed: errors === 0,
         totalIssues,
         errors,
@@ -138,9 +120,8 @@ export async function runLinting(filesToCheck, projectDir, challengeMetadata = {
         details: lintResults
       };
     } catch {
-      // If we can't parse, assume linting passed (files might not exist yet)
       return {
-        score: 50, // Partial credit if files don't exist
+        score: 50,
         passed: false,
         error: 'Could not parse linting results',
         details: []
